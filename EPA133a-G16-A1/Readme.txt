@@ -16,16 +16,16 @@ Folder EPA133a-G16-A1
     -BMMS_overview.xlsx
   README.txt
   Report.pdf
-  CleanRoads.py
-  CleanBridges.py
+  CleanRoads.ipynb
+  CleanBridges..ipynb
   
   HOW TO RUN the code: 
 
- First, run the program CleanRoads.py. 
+ First, run the program CleanRoads.ipynb. 
 Inputs:  _roads.tsv from the "original" folder 
 Outputs:  1. new file called _roads.tsv and road_transposed.csv in the "infrastructure" folder. 
 
-Secondly, run the program CleanBridges.py
+Secondly, run the program CleanBridges.ipynb
 Inputs: the BMMS_overview.xlsx from the “original” folder  
 The road_transposed.csv from the "cleaned" folder, created by CleanRoads.py
 Outputs:  This program outputs intermediate and final results in xlsx files.
