@@ -1,4 +1,4 @@
-# Example README File
+# README File
 
 Created by:
 |Group Number|16|
@@ -15,9 +15,11 @@ In the folder (EPA133a-G16-A1),  can find place group 16's lab submission.
 
 This README file is to help a first-time user understand what it is about and how they might be able to use it.
 
-## How to Use
+
+## Purpose and objective of this project
 
 This project submission  evaluates data quality issues in Bangladesh s transport infrastructure dataset, which contains information on the locations of roads and bridges key elements for assessing bridge infrastructure criticality, vulnerability, and investment priorities. However, errors and missing details in the data can compromise simulation outcomes. To address this, we identify the main issues, propose strategies for resolution, prioritize the most critical problems, and implement selected solutions. The objective is to enhance data quality and ensure the dataset is ready for future simulation tasks.
+## Structure
 
 The following submission is provided with the following structure:
 Structure inside this ZIP file: 
@@ -44,7 +46,7 @@ Folder EPA133a-G16-A1
 
 The most important files are located in data/processes. These are: BMMS_overview.xlsx and _roads.tsv. They are the final outputs from both notebooks.
   
-  HOW TO RUN the code: 
+ ## How to Use
 
 First, run the program CleanRoads.ipynb. 
 Inputs:  _roads.tsv from the folder in the path data/raw 
