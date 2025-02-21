@@ -40,8 +40,8 @@ Folder EPA133a-G16-A1
   Subfolder "report"
     -EPA133a-G16-A1-Report.pdf
   Subfolder "notebook"
-    -CleanRoads.ipynb
-    -CleanBridges.ipynb
+    -G16-A1-CleanRoads.ipynb
+    -G16-A1-CleanBridges.ipynb
   README.txt (this file)
 
 The most important files are located in data/processes. These are: BMMS_overview.xlsx and _roads.tsv. They are the final outputs from both notebooks.
