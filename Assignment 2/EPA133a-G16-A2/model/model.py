@@ -57,7 +57,10 @@ class BangladeshModel(Model):
 
     def __init__(self, seed=None, x_max=500, y_max=500, x_min=0, y_min=0):
 
+        # This along with self.schedule.step() (see last line of code in the file),
+        # is the same as self.agents.do("step")
         self.schedule = BaseScheduler(self)
+
         self.running = True
         self.path_ids_dict = defaultdict(lambda: pd.Series())
         self.space = None
@@ -163,6 +166,7 @@ class BangladeshModel(Model):
         Advance the simulation by one step.
         """
         self.schedule.step()
-
+        # This along with self.schedule = BaseScheduler(self) (see first line of code in __init__ function ),
+        # is the same as self.agents.do("step")
 
 # EOF -----------------------------------------------------------
