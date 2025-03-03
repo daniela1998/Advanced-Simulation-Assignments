@@ -49,10 +49,10 @@ class Bridge(Infra):
     ...
 
     """
-    A_prob = 0
-    B_prob = 0
-    C_prob = 0.05
-    D_prob = 0.1
+    A_prob = 0.1
+    B_prob = 0.2
+    C_prob = 0.4
+    D_prob = 0.8
 
     def __init__(self, unique_id, model, condition, length=0,
                  name='Unknown', road_name='Unknown'):
