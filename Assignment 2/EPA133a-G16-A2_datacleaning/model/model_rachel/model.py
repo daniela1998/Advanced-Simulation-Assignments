@@ -67,6 +67,7 @@ class BangladeshModel(Model):
         # TODO
         self.driving_times = []
         self.bridge_delays = {}  # {bridge_id: total delay time}
+        self.total_wait_time = 0  # initialize total waiting time
 
         self.generate_model()
 
@@ -184,4 +185,15 @@ class BangladeshModel(Model):
         top_10 = dict(sorted(self.bridge_delays.items(), key=lambda item: item[1], reverse=True)[:10])
         return top_10
 
+    # TODO
+    def get_total_delay_time(self):
+        return self.total_wait_time
+    
+    # TODO
+    def get_average_delay_time(self):
+        total_trucks = len(self.driving_times)  # total trucks that reached a Sink
+        if total_trucks == 0:
+            return 0  # avoid division by zero
+        return self.total_wait_time / total_trucks
+    
 # EOF -----------------------------------------------------------
