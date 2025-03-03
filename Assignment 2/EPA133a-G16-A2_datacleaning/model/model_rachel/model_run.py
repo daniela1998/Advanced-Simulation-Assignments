@@ -35,3 +35,6 @@ print(f"Total delay time: {total_delay} minutes")
 
 average_delay = sim_model.get_average_delay_time()
 print(f"Average delay time per truck: {average_delay} minutes")
+
+broken_bridges = sim_model.get_broken_bridges()
+print(f"Broken bridges: {broken_bridges}")

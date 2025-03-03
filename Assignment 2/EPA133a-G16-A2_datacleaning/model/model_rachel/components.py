@@ -62,6 +62,8 @@ class Bridge(Infra):
 
     # TODO
     def get_delay_time(self):
+        return self.calculate_delay_time()
+        """
         if self.condition == 'A' and random.random() < Bridge.A_prob:
             return self.calculate_delay_time()
         elif self.condition == 'B' and random.random() < Bridge.B_prob:
@@ -72,6 +74,7 @@ class Bridge(Infra):
             return self.calculate_delay_time()
         else:
             return 0
+        """
     
     def calculate_delay_time(self): # in minutes
         if self.length < 10:
@@ -306,14 +309,30 @@ class Vehicle(Agent):
 
             elif isinstance(next_infra, Bridge):
                 # TODO
+                if next_infra.unique_id in self.model.broken_bridges:
+                    if self.waiting_time == 0:  # only calculate delay once per vehicle
+                        self.waiting_time = next_infra.get_delay_time()
+
+                    # track bridge delay in the model
+                    if next_infra.unique_id not in self.model.bridge_delays:
+                        self.model.bridge_delays[next_infra.unique_id] = 0  # initialize if not present
+                    self.model.bridge_delays[next_infra.unique_id] += self.waiting_time  # accumulate delay
+
+                    if self.waiting_time > 0:
+                        # arrive at the bridge and wait
+                        self.arrive_at_next(next_infra, 0)
+                        self.state = Vehicle.State.WAIT
+                        #print(f"Truck {self.unique_id} waiting at {next_infra} for {self.waiting_time} mins")
+                        return
+
+                """
                 if self.waiting_time == 0:  # only calculate delay once per vehicle
                     self.waiting_time = next_infra.get_delay_time()
 
-                # TODO
                 # track bridge delay in the model
                 if next_infra.unique_id not in self.model.bridge_delays:
                     self.model.bridge_delays[next_infra.unique_id] = 0  # initialize if not present
-                self.model.bridge_delays[next_infra.unique_id] += self.waiting_time  # sccumulate delay
+                self.model.bridge_delays[next_infra.unique_id] += self.waiting_time  # accumulate delay
 
                 if self.waiting_time > 0:
                     # arrive at the bridge and wait
@@ -322,6 +341,7 @@ class Vehicle(Agent):
                     #print(f"Truck {self.unique_id} waiting at {next_infra} for {self.waiting_time} mins")
                     return 
                 # else, continue driving
+                """
 
             if next_infra.length > distance:
                 self.arrive_at_next(next_infra, distance)

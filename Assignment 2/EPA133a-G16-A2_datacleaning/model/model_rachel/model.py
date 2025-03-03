@@ -4,6 +4,7 @@ from mesa.space import ContinuousSpace
 from components import Source, Sink, SourceSink, Bridge, Link
 import pandas as pd
 from collections import defaultdict
+import random
 
 
 # ---------------------------------------------------------------
@@ -70,6 +71,7 @@ class BangladeshModel(Model):
         self.total_wait_time = 0  # initialize total waiting time
 
         self.generate_model()
+        self.broken_bridges = self.determine_broken_bridges()  # stores broken bridge IDs
 
     def generate_model(self):
         """
@@ -164,6 +166,20 @@ class BangladeshModel(Model):
             if sink is not source:
                 break
         return self.path_ids_dict[source, sink]
+    
+    # TODO
+    def determine_broken_bridges(self):
+        """
+        Determine which bridges are broken at the start of the simulation.
+        """
+        broken_bridges = set()
+        for agent in self.schedule._agents.values():
+            if isinstance(agent, Bridge):
+                if ((agent.condition == 'A' and random.random() < Bridge.A_prob) or (agent.condition == 'B' and random.random() < Bridge.B_prob) or (agent.condition == 'C' and random.random() < Bridge.C_prob) or (agent.condition == 'D' and random.random() < Bridge.D_prob)):
+                    broken_bridges.add(agent.unique_id)
+
+        #print(f"Broken bridges for this run: {broken_bridges}")
+        return broken_bridges
 
     def step(self):
         """
@@ -195,5 +211,9 @@ class BangladeshModel(Model):
         if total_trucks == 0:
             return 0  # avoid division by zero
         return self.total_wait_time / total_trucks
+    
+    # TODO
+    def get_broken_bridges(self):
+        return list(self.broken_bridges)
     
 # EOF -----------------------------------------------------------
