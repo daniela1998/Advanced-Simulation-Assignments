@@ -175,7 +175,10 @@ class BangladeshModel(Model):
         broken_bridges = set()
         for agent in self.schedule._agents.values():
             if isinstance(agent, Bridge):
-                if ((agent.condition == 'A' and random.random() < Bridge.A_prob) or (agent.condition == 'B' and random.random() < Bridge.B_prob) or (agent.condition == 'C' and random.random() < Bridge.C_prob) or (agent.condition == 'D' and random.random() < Bridge.D_prob)):
+                if ((agent.condition == 'A' and random.random() < Bridge.A_prob) or 
+                    (agent.condition == 'B' and random.random() < Bridge.B_prob) or 
+                    (agent.condition == 'C' and random.random() < Bridge.C_prob) or 
+                    (agent.condition == 'D' and random.random() < Bridge.D_prob)):
                     broken_bridges.add(agent.unique_id)
 
         #print(f"Broken bridges for this run: {broken_bridges}")
