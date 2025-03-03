@@ -51,8 +51,8 @@ class Bridge(Infra):
     """
     A_prob = 0
     B_prob = 0
-    C_prob = 0.05
-    D_prob = 0.1
+    C_prob = 0
+    D_prob = 0.05
 
     def __init__(self, unique_id, model, condition, length=0,
                  name='Unknown', road_name='Unknown'):
@@ -259,6 +259,8 @@ class Vehicle(Agent):
         """
         if self.state == Vehicle.State.WAIT:
             self.waiting_time = max(self.waiting_time - 1, 0)
+            # TODO
+            self.model.total_wait_time += 1 # add 1 min to waiting time
             if self.waiting_time == 0:
                 self.waited_at = self.location
                 self.state = Vehicle.State.DRIVE

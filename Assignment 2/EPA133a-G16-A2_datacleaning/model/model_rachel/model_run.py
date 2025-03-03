@@ -29,3 +29,9 @@ print(f"Average driving time: {average_time} mins")
 
 bridge_delay = sim_model.get_biggest_bridge_delay()
 print(f"Bridge with biggest delays: {bridge_delay}")
+
+total_delay = sim_model.get_total_delay_time()
+print(f"Total delay time: {total_delay} minutes")
+
+average_delay = sim_model.get_average_delay_time()
+print(f"Average delay time per truck: {average_delay} minutes")
