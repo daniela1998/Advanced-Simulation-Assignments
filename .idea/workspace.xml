@@ -5,28 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe41554d-9335-4939-9ca3-c4b8601f3435" name="Changes" comment="Added some comments about MESA prior version. This is also to check if my GIT works properly. &#10;&#10;In this code: &#10;self.schedule = BaseScheduler(self)&#10;self.schedule.step()&#10;&#10;Means: (from TPM Modelling)&#10;self.agents.do(&quot;step&quot;)">
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/data/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/data/demo-1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/data/demo-2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/data/demo-3.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/data/demo-4.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/data/processed/New Text Document.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/data/raw/BMMS_overview.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/data/raw/_roads3.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/img/N1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/img/demo-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/img/demo-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/img/demo-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/ContinuousSpace/SimpleContinuousModule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/ContinuousSpace/simple_continuous_canvas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/components.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/model_run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/model_viz.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/data/demo_100.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/ContinuousSpace/SimpleContinuousModule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/ContinuousSpace/simple_continuous_canvas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/Untitled-1.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/components.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/model_run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/model_viz.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2_datacleaning/notebook/CreateDemoFile.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2_datacleaning/notebook/CreateDemoFile.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/components.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/components.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -60,36 +50,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.components.executor&quot;: &quot;Run&quot;,
-    &quot;Python.model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.model_run.executor&quot;: &quot;Run&quot;,
-    &quot;Python.model_viz.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/Desktop/Localisimo/Advanced Simulation/Advanced-Simulation-Assignments/Assignment 2/Celia - EPA133a-G16-A2/data/processed&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.components.executor": "Run",
+    "Python.model.executor": "Run",
+    "Python.model_run.executor": "Run",
+    "Python.model_viz.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Usuario/Desktop/Localisimo/Advanced Simulation/Advanced-Simulation-Assignments/Assignment 2/Celia - EPA133a-G16-A2/data",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;Jupyter&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Jupyter"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Assignment 2\Celia - EPA133a-G16-A2\data" />
+      <recent name="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Assignment 2\Celia - EPA133a-G16-A2\model\celia_model_rachel" />
+      <recent name="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Assignment 2\Celia - EPA133a-G16-A2\model" />
       <recent name="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Assignment 2\Celia - EPA133a-G16-A2\data\processed" />
       <recent name="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Assignment 2" />
-      <recent name="D:\GitHub\GIT_AdvancedSimulation" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Assignment 2\Celia - EPA133a-G16-A2\data" />
@@ -116,7 +108,8 @@
       <workItem from="1740825232368" duration="3440000" />
       <workItem from="1740828714736" duration="9884000" />
       <workItem from="1740938104887" duration="5119000" />
-      <workItem from="1741011413421" duration="1495000" />
+      <workItem from="1741011413421" duration="5835000" />
+      <workItem from="1741025801450" duration="6453000" />
     </task>
     <task id="LOCAL-00001" summary="move commit test">
       <option name="closed" value="true" />
@@ -142,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740765024274</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added some comments about MESA prior version. This is also to check if my GIT works properly. &#10;&#10;In this code: &#10;self.schedule = BaseScheduler(self)&#10;self.schedule.step()&#10;&#10;Means: (from TPM Modelling)&#10;self.agents.do(&quot;step&quot;)">
+      <option name="closed" value="true" />
+      <created>1741013083526</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741013083526</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,9 +166,20 @@
     <MESSAGE value="Added some comments about MESA prior version. This is also to check if my GIT works properly. &#10;&#10;In this code: &#10;self.schedule = BaseScheduler(self)&#10;self.schedule.step()&#10;&#10;Means: (from TPM Modelling)&#10;self.agents.do(&quot;step&quot;)" />
     <option name="LAST_COMMIT_MESSAGE" value="Added some comments about MESA prior version. This is also to check if my GIT works properly. &#10;&#10;In this code: &#10;self.schedule = BaseScheduler(self)&#10;self.schedule.step()&#10;&#10;Means: (from TPM Modelling)&#10;self.agents.do(&quot;step&quot;)" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/model_run.py</url>
+          <line>46</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model.coverage" NAME="model Coverage Results" MODIFIED="1740944838060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model_run.coverage" NAME="model_run Coverage Results" MODIFIED="1741011541470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model_run.coverage" NAME="model_run Coverage Results" MODIFIED="1741031082340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$components.coverage" NAME="components Coverage Results" MODIFIED="1740943455372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$components_Celia.coverage" NAME="components_Celia Coverage Results" MODIFIED="1740754353310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2_datacleaning/model" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model_viz.coverage" NAME="model_viz Coverage Results" MODIFIED="1740837230150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model" />
