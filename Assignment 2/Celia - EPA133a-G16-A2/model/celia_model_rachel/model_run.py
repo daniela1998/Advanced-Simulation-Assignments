@@ -13,9 +13,12 @@ import pandas as pd
 # run time (ticks)
 run_length = 7200
 scenario_number = 0 #modified. Only changes the title of the CSV. The remaining is not implemented @Daniela
-df=pd.DataFrame(columns=['Average driving time', 'Bridge with biggest delays', 'Bridge with biggest delays value', 'Total delay time',
+df=pd.DataFrame(columns=['road','scenario','seed', 'Average driving time', 'Bridge with biggest delays', 'Bridge with biggest delays value', 'Total delay time',
                          'Average delay time per truck', 'Broken bridges']) #modified
-for n, seed in enumerate(range(1, 3)):
+seeds=range(1,10) #modified
+for n, seed in enumerate(seeds):
+
+    #Probably here add scenarios for loop?
 
     sim_model = BangladeshModel(seed=seed)
 
@@ -28,6 +31,9 @@ for n, seed in enumerate(range(1, 3)):
 
     #Data Collection
 
+    df.loc[n, 'road'] = 'N1'
+    df.loc[n, 'scenario'] = scenario_number
+    df.loc[n, 'seed'] = seed
     average_time = sim_model.get_average_driving_time()
     df.loc[n, 'Average driving time'] = average_time  # append the value to the DataFrame
     print(f"Average driving time: {average_time} mins")
@@ -59,12 +65,10 @@ for n, seed in enumerate(range(1, 3)):
     df.loc[n, 'Broken bridges'] = broken_bridges  # append the value to the DataFrame
     print(f"Broken bridges: {broken_bridges} mins")
 
-    df.to_csv(f'scenario{scenario_number}_summary.csv', index=False)
+    df.to_csv(f'scenario{scenario_number}_summary.csv', index=False, sep=';')
 
 
     # Save the collected data ONLY from Vehicles to a CSV file
     sim_model.save_data(f'Vehicles-scenario{scenario_number}-seed {seed}.csv') #modified
 
-    #reset the step counter and truck counter
-    sim_model.schedule.steps = 0
-    #Source.truck_counter = 0 #so vehicles are numbered correctly
+

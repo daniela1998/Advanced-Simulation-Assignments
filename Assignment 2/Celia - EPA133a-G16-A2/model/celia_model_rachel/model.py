@@ -1,6 +1,8 @@
 from mesa import Model
 from mesa.time import BaseScheduler
 from mesa.space import ContinuousSpace
+from openpyxl.styles.builtins import comma
+
 from components import Source, Sink, SourceSink, Bridge, Link, Vehicle
 import pandas as pd
 from collections import defaultdict
@@ -203,15 +205,7 @@ class BangladeshModel(Model):
                     'generated_at_step': agent.generated_at_step,
                     'removed_at_step': agent.removed_at_step,})
 
-    def save_data(self, filename='scenario_non_numbered.csv'): #modified
-        """
-        Save collected data to a CSV file.
-        """
-        keys = self.data[0].keys()
-        with open(filename, 'w', newline='') as output_file:
-            dict_writer = csv.DictWriter(output_file, fieldnames=keys)
-            dict_writer.writeheader()
-            dict_writer.writerows(self.data)
+
 
     def step(self):
         """
@@ -224,7 +218,7 @@ class BangladeshModel(Model):
     def get_average_driving_time(self):
         if not self.driving_times:  # avoid division by zero
             return 0
-        return sum(self.driving_times) / len(self.driving_times)
+        return int(sum(self.driving_times) / len(self.driving_times)) #modified
 
     # TODO
     def get_biggest_bridge_delay(self):
@@ -243,7 +237,7 @@ class BangladeshModel(Model):
         total_trucks = len(self.driving_times)  # total trucks that reached a Sink
         if total_trucks == 0:
             return 0  # avoid division by zero
-        return self.total_wait_time / total_trucks
+        return int(self.total_wait_time / total_trucks)
     
     # TODO
     def get_broken_bridges(self):
