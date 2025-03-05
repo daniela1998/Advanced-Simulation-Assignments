@@ -52,7 +52,7 @@ for n in range(scenario_range):
                     'Accumulate_delay_time': sim_model.get_total_delay_time(),
                     'Average_delay_time': sim_model.get_average_delay_time(),
                     'Broken_bridges': ', '.join(sim_model.get_broken_bridges()),
-                    'Bridge_delays': ', '.join(sim_model.get_biggest_bridge_delay())  # Convert list to string
+
                 })
 
         df = pd.DataFrame(data_list)
