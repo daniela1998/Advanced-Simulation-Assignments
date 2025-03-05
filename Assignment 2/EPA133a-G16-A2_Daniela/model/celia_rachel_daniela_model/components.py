@@ -57,21 +57,10 @@ class Bridge(Infra):
         self.condition = condition
         self.probabilities = model.probabilities
 
-    # TODO
+
     def get_delay_time(self):
         return self.calculate_delay_time()
-        """
-        if self.condition == 'A' and random.random() < Bridge.A_prob:
-            return self.calculate_delay_time()
-        elif self.condition == 'B' and random.random() < Bridge.B_prob:
-            return self.calculate_delay_time()
-        elif self.condition == 'C' and random.random() < Bridge.C_prob:
-            return self.calculate_delay_time()
-        elif self.condition == 'D' and random.random() < Bridge.D_prob:
-            return self.calculate_delay_time()
-        else:
-            return 0
-        """
+
     
     def calculate_delay_time(self): # in minutes
         if self.length < 10:

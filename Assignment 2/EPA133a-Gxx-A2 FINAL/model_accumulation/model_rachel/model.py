@@ -67,7 +67,7 @@ class BangladeshModel(Model):
         self.sources = []
         self.sinks = []
 
-        # TODO
+
         self.driving_times = []
         self.bridge_delays = {}  # {bridge_id: total delay time}
         self.total_wait_time = 0  # initialize total waiting time
@@ -100,7 +100,7 @@ class BangladeshModel(Model):
             # be careful with the sorting
             # better remove sorting by id
             # Select all the objects on a particular road
-            # TODO
+
             df['numeric_id'] = df['id'].apply(lambda x: int(x.split('_')[1]))
             df_objects_on_road = df[df['road'] == road].sort_values(by=['numeric_id'])
 
@@ -171,7 +171,7 @@ class BangladeshModel(Model):
                 break
         return self.path_ids_dict[source, sink]
     
-    # TODO
+
     def determine_broken_bridges(self):
         """
         Determine which bridges are broken at the start of the simulation.
@@ -194,38 +194,59 @@ class BangladeshModel(Model):
         """
         self.schedule.step()
 
-    # TODO
+
     def get_average_driving_time(self):
         if not self.driving_times:  # avoid division by zero
             return 0
         return sum(self.driving_times) / len(self.driving_times)
 
-    # TODO
+
     def get_biggest_bridge_delay(self):
+        '''
+        Return the 10 bridges with the biggest total delay time in a dictionary form.
+            key=name of the bridge
+            value=total accumulated delay time of the bridge
+        If there is no bridge with delay then return a tuple
+        with the first element being None (name of the bridge) and the second element being 0
+        (caused delay time by that bridge).
+        '''
         if not self.bridge_delays:
             return None, 0  # No bridge delays recorded
         
         top_10 = dict(sorted(self.bridge_delays.items(), key=lambda item: item[1], reverse=True)[:10])
         return top_10
 
-    # TODO
+
     def get_total_delay_time(self):
+        '''
+        Return the total waiting time of all trucks that reached a Sink (end of the road).
+        '''
         return self.total_wait_time
     
-    # TODO
+
     def get_average_delay_time(self):
+        '''
+        Return the average waiting time of all trucks that reached a Sink (end of the road).
+        If no trucks reached a Sink, return 0.
+
+        We calculate the average waiting time by dividing the total waiting time
+        by the number of trucks that reached a Sink.
+        '''
         total_trucks = len(self.driving_times)  # total trucks that reached a Sink
         if total_trucks == 0:
             return 0  # avoid division by zero
         return self.total_wait_time / total_trucks
     
-    # TODO
+
     def get_broken_bridges(self):
+        '''
+        Return the list of broken bridges
+        '''
         return list(self.broken_bridges)
     
     def collect_data(self):
         """
-        Collect data at each step.
+        Collect data from the vehicles at each step.
         """
         for agent in self.schedule.agents:
             if isinstance(agent, Vehicle):
@@ -242,7 +263,7 @@ class BangladeshModel(Model):
                 
     def save_data(self, filename='scenario_non_numbered.csv'): #modified
         """
-        Save collected data to a CSV file.
+        Save collected data from the vehicles to a CSV file.
         """
         keys = self.data[0].keys()
         with open(filename, 'w', newline='') as output_file:

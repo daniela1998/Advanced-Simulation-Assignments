@@ -54,11 +54,11 @@ class Bridge(Infra):
                  name='Unknown', road_name='Unknown'):
         super().__init__(unique_id, model, length, name, road_name)
 
-        # TODO
+
         self.condition = condition
         self.probabilities = model.probabilities
 
-    # TODO
+
     def get_delay_time(self): # in minutes
         if self.length < 10:
             return random.uniform(10, 20)
@@ -95,7 +95,7 @@ class Sink(Infra):
             self.vehicle_removed_toggle = not self.vehicle_removed_toggle
             print(str(self) + ' REMOVE ' + str(vehicle))
 
-            # TODO
+
             # Store the driving time of this vehicle
             driving_time = vehicle.removed_at_step - vehicle.generated_at_step
             self.model.driving_times.append(driving_time)
@@ -245,7 +245,7 @@ class Vehicle(Agent):
         """
         if self.state == Vehicle.State.WAIT:
             self.waiting_time = max(self.waiting_time - 1, 0)
-            # TODO
+
             self.model.total_wait_time += 1 # add 1 min to waiting time
             if self.waiting_time == 0:
                 self.waited_at = self.location
@@ -273,7 +273,7 @@ class Vehicle(Agent):
             # remain on the same object
             self.location_offset += distance
 
-    # TODO
+
     def drive_to_next(self, distance):
         """
         vehicle shall move to the next object with the given distance
@@ -291,7 +291,7 @@ class Vehicle(Agent):
                 return
 
             elif isinstance(next_infra, Bridge):
-                # TODO
+
                 if next_infra.unique_id in self.model.broken_bridges:
                     if self.waiting_time == 0:  # only calculate delay once per vehicle
                         self.waiting_time = next_infra.get_delay_time()
@@ -312,7 +312,7 @@ class Vehicle(Agent):
                 self.arrive_at_next(next_infra, distance)
                 return  # stop moving
 
-            # Ssbtract distance and continue to next infrastructure
+            # Susbtract distance and continue to next infrastructure
             distance -= next_infra.length
 
     def arrive_at_next(self, next_infra, location_offset):
