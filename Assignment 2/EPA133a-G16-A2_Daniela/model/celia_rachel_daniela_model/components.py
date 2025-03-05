@@ -138,12 +138,12 @@ class Source(Infra):
     """
 
     def __init__(self, unique_id, model, length=0,
-                 name='Unknown', road_name='Unknown',truck_conter=0):
-        super().__init__(unique_id, model, length, name, road_name 
+                 name='Unknown', road_name='Unknown',truck_counter=0):
+        super().__init__(unique_id, model, length, name, road_name)
 
-    self.truck_counter = 0
-    generation_frequency = 5
-    vehicle_generated_flag = False
+        self.truck_counter = truck_counter
+        generation_frequency = 5
+        vehicle_generated_flag = False
 
     def step(self): # generate new truck every 5 
         if self.model.schedule.steps % self.generation_frequency == 0:
