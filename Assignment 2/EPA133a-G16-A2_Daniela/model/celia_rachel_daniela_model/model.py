@@ -213,7 +213,7 @@ class BangladeshModel(Model):
         """
         keys = self.data[0].keys()
         with open(filename, 'w', newline='') as output_file:
-            dict_writer = csv.DictWriter(output_file, fieldnames=keys, sep=';')
+            dict_writer = csv.DictWriter(output_file, fieldnames=keys, delimiter =';') #modified
             dict_writer.writeheader()
             dict_writer.writerows(self.data)
 
@@ -252,5 +252,10 @@ class BangladeshModel(Model):
     # TODO
     def get_broken_bridges(self):
         return list(self.broken_bridges)
+    
+    def get_truck_counter(self):
+        for agent in self.schedule._agents:
+            if isinstance(agent, Source):
+                return agent.truck_counter
     
 # EOF -----------------------------------------------------------

@@ -137,7 +137,11 @@ class Source(Infra):
 
     """
 
-    truck_counter = 0
+    def __init__(self, unique_id, model, length=0,
+                 name='Unknown', road_name='Unknown',truck_conter=0):
+        super().__init__(unique_id, model, length, name, road_name 
+
+    self.truck_counter = 0
     generation_frequency = 5
     vehicle_generated_flag = False
 
