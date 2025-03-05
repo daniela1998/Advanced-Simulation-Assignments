@@ -1,7 +1,7 @@
 from mesa import Model
 from mesa.time import BaseScheduler
 from mesa.space import ContinuousSpace
-from components import Source, Sink, SourceSink, Bridge, Link
+from components import Source, Sink, SourceSink, Bridge, Link, Vehicle
 import pandas as pd
 from collections import defaultdict
 import random
@@ -84,7 +84,7 @@ class BangladeshModel(Model):
         Warning: the labels are the same as the csv column labels
         """
 
-        df = pd.read_csv('../experiment/demo_100.csv')
+        df = pd.read_csv('../data/demo_100.csv')
 
         # a list of names of roads to be generated
         roads = ['N1']

@@ -49,8 +49,8 @@ for n in range(scenario_range):
                     'Scenario': n,
                     'Seed': seed,
                     'Average_driving_time': sim_model.get_average_driving_time(),
-                    'Accumulate_delay_time': sim_model.get_total_delay_time(),
-                    'Average_delay_time': sim_model.get_average_delay_time(),
+                    'Total_waiting_time': sim_model.get_total_delay_time(),
+                    'Average_waiting_time': sim_model.get_average_delay_time(),
                     'Broken_bridges': ', '.join(sim_model.get_broken_bridges()),
 
                 })
@@ -58,4 +58,4 @@ for n in range(scenario_range):
         df = pd.DataFrame(data_list)
 
         # save to csv
-        df.to_csv(f'scenario{n}_summary.csv', index=False)
+        df.to_csv(f'../experiment/scenario{n}.csv', index=False)
