@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe41554d-9335-4939-9ca3-c4b8601f3435" name="Changes" comment="General README file.">
+    <list default="true" id="fe41554d-9335-4939-9ca3-c4b8601f3435" name="Changes" comment="General README file, update. Added new structure and notebook reference">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/data/demo-1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/data/raw/demo-1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/data/demo-2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/data/raw/demo-2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/data/demo-3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/data/raw/demo-3.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model/Visualisation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model/Visualisation.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +102,7 @@
       <workItem from="1740938104887" duration="5119000" />
       <workItem from="1741011413421" duration="5835000" />
       <workItem from="1741025801450" duration="11790000" />
-      <workItem from="1741274455575" duration="4918000" />
+      <workItem from="1741274455575" duration="5798000" />
     </task>
     <task id="LOCAL-00001" summary="move commit test">
       <option name="closed" value="true" />
@@ -156,7 +152,31 @@
       <option name="project" value="LOCAL" />
       <updated>1741276939397</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="General README file, update. Added new structure and notebook reference">
+      <option name="closed" value="true" />
+      <created>1741279453033</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1741279453033</updated>
+    </task>
+    <task id="LOCAL-00008" summary="General README file, update. Added new structure and notebook reference">
+      <option name="closed" value="true" />
+      <created>1741279646633</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1741279646633</updated>
+    </task>
+    <task id="LOCAL-00009" summary="General README file, update. Added new structure and notebook reference">
+      <option name="closed" value="true" />
+      <created>1741279711403</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1741279711403</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +201,8 @@
     <MESSAGE value="Draft version of exporting. There is an error with the truck counter (class attribute of Source). Right now, with the second seed it keep counting vehicles, instead of resetting to 1&#10;&#10;Now: one csv about Vehicle data per seed and one summary csv per scenario with all the important stakeholder data" />
     <MESSAGE value="Added some comments about MESA prior version. This is also to check if my GIT works properly. &#10;&#10;In this code: &#10;self.schedule = BaseScheduler(self)&#10;self.schedule.step()&#10;&#10;Means: (from TPM Modelling)&#10;self.agents.do(&quot;step&quot;)" />
     <MESSAGE value="General README file." />
-    <option name="LAST_COMMIT_MESSAGE" value="General README file." />
+    <MESSAGE value="General README file, update. Added new structure and notebook reference" />
+    <option name="LAST_COMMIT_MESSAGE" value="General README file, update. Added new structure and notebook reference" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model.coverage" NAME="model Coverage Results" MODIFIED="1740944838060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model" />

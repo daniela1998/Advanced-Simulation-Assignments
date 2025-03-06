@@ -42,6 +42,8 @@ Structure inside this ZIP file:
 
             Subfolder processed
                 -demo_100.csv (current data for the model)
+
+            Subfolder experiment
                 -scenario0.csv
                 -scenario1.csv
                 -scenario2.csv
@@ -113,7 +115,7 @@ The main file for the user to get the results is [model_run.py](model/model_run.
 2. Run model_run.py to get the results of the simulation. The results of each step will be printed in the console. 
  
     Output:
-                Results per step in terminal,
+                Results per step in terminal,(__Note: to reduce computational time, we commented the Vehicle print functions__)
                 [scenario0.csv](data/processed/scenario0.csv),
                 [scenario1.csv](data/processed/scenario1.csv),
                 [scenario2.csv](data/processed/scenario2.csv),
@@ -127,7 +129,8 @@ The main file for the user to get the results is [model_run.py](model/model_run.
 3. To visualize the results: run the [Visualisation.ipynb](model/Visualisation.ipynb) file. This file contains the code to visualize the boxplot of the nine scenarios.
 
 
-Please, keep in mind that the computational time to run the 9 scenarios is long. You can find attached the results of the simulation in the [experiment](experiment) folder. 
+Please, keep in mind that the computational time to run the 9 scenarios is long. We commented the VehicleTruck printing function to reduce time to 15 mins run.
+Find attached the results of the simulation in the [experiment](experiment) folder. 
 
 
 
