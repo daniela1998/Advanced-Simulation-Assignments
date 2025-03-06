@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe41554d-9335-4939-9ca3-c4b8601f3435" name="Changes" comment="Added some comments about MESA prior version. This is also to check if my GIT works properly. &#10;&#10;In this code: &#10;self.schedule = BaseScheduler(self)&#10;self.schedule.step()&#10;&#10;Means: (from TPM Modelling)&#10;self.agents.do(&quot;step&quot;)">
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/Vehicles-scenario0-seed 1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/Vehicles-scenario0-seed 2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/Vehicles-scenario0-seed 3.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/Vehicles-scenario0-seed 4.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/Untitled-1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/Untitled-1.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/components.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/components.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/model_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/model_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,31 +41,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.components.executor": "Run",
-    "Python.model.executor": "Run",
-    "Python.model_run.executor": "Run",
-    "Python.model_viz.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Usuario/Desktop/Localisimo/Advanced Simulation/Advanced-Simulation-Assignments/Assignment 2/Celia - EPA133a-G16-A2/data",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.components.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_viz.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/Desktop/Localisimo/Advanced Simulation/Advanced-Simulation-Assignments/Assignment 2/Celia - EPA133a-G16-A2/data&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "Jupyter"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Jupyter&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Assignment 2\Celia - EPA133a-G16-A2\data" />
@@ -108,6 +101,7 @@
       <workItem from="1740938104887" duration="5119000" />
       <workItem from="1741011413421" duration="5835000" />
       <workItem from="1741025801450" duration="11790000" />
+      <workItem from="1741274455575" duration="2268000" />
     </task>
     <task id="LOCAL-00001" summary="move commit test">
       <option name="closed" value="true" />
