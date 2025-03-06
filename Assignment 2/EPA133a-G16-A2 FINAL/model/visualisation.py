@@ -28,7 +28,10 @@ plt.xticks(range(1, 10), [f"Scenario {i}" for i in range(9)], rotation=45)
 plt.title("Boxplot of All Scenarios")
 plt.ylabel("Average driving time (hours)")
 
+savefig('../img/outputboxplot2.png')
+
 # Show the plot
 plt.show()
-savefig('../img/outputboxplot2.png')
+
+
 
