@@ -89,7 +89,7 @@ Structure inside this ZIP file:
 
 - [requirements.txt](requirements.txt): Contains the required libraries to run the model.
 
-- [Visualisation.ipynb](Visualisation.ipynb): Contains the code to visualize the boxplot of the nine scenarios.
+- [visualisation.py](visualisation.py): Contains the code to visualize the boxplot of the nine scenarios.
 
 - [README.md](README.md): This file.
 
@@ -126,8 +126,9 @@ The main file for the user to get the results is [model_run.py](model/model_run.
                 [scenario7.csv](data/processed/scenario7.csv),
                 [scenario8.csv](data/processed/scenario8.csv),
 
-3. To visualize the results: run the [Visualisation.ipynb](model/Visualisation.ipynb) file. This file contains the code to visualize the boxplot of the nine scenarios.
-
+3. To visualize the results: run the [visualisation.py](model/visualisation.py) file. This file contains the code to visualize the boxplot of the nine scenarios.
+    Input: all 9 csv scenario files. (see 2.)
+    Output: [outputboxplot2.png](img/outputboxplot2.png)
 
 Please, keep in mind that the computational time to run the 9 scenarios is long. We commented the VehicleTruck printing function to reduce time to 15 mins run.
 Find attached the results of the simulation in the [experiment](experiment) folder. 
