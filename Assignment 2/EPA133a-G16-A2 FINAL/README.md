@@ -17,7 +17,7 @@ Created by: EPA133a Group 16
 In the folder (EPA133a-G16-A2),  can find place group 16's lab submission for the Assignment 2.
 
 This README file is to help a first-time user understand what it is about and how they might be able to use it.
-If you are looking for information about the _model folder_ of Assignment 2, please navigate to the [model/README.md](model/README.md) in the [model](model) directory. 
+ 
 
 ## Purpose and objective of this project
 
