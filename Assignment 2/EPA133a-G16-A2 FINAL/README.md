@@ -44,6 +44,7 @@ Structure inside this ZIP file:
                 -demo_100.csv (current data for the model)
 
             Subfolder experiment
+                -merged_scenarios_summary.csv
                 -scenario0.csv
                 -scenario1.csv
                 -scenario2.csv
@@ -130,7 +131,17 @@ The main file for the user to get the results is [model_run.py](model/model_run.
     Input: all 9 csv scenario files. (see 2.)
     Output: [outputboxplot2.png](img/outputboxplot2.png)
 
-Please, keep in mind that the computational time to run the 9 scenarios is long. We commented the VehicleTruck printing function to reduce time to 15 mins run.
+Please, keep in mind that the computational time to run the 9 scenarios is long.
+We commented the VehicleTruck printing function to reduce time to 15 mins run.
+More specifically, we commented the last line of code of the step function of the Vehicle(Agent) class:
+
+
+More specifically, we commented the last line of code of the `step` function of the `Vehicle` (Agent) class in the `components.py` file:
+
+print(self)
+
+
+You can find the [step function](Assignment 2/EPA133a-G16-A2 FINAL/model/components.py:242)  in (components.py>Vehicle(Agent)>step()) function in the `Vehicle` class in the `components.py` file.
 Find attached the results of the simulation in the [experiment](experiment) folder. 
 
 
