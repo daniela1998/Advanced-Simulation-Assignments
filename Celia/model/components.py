@@ -222,10 +222,17 @@ class Vehicle(Agent):
         self.removed_at_step = None
 
     def __str__(self):
-        return "Vehicle" + str(self.unique_id) + \
+        ''' ORIGINAL OPTION (Too long)
+                return "Vehicle" + str(self.unique_id) + \
                " +" + str(self.generated_at_step) + " -" + str(self.removed_at_step) + \
                " " + str(self.state) + '(' + str(self.waiting_time) + ') ' + \
-               str(self.location) + '(' + str(self.location.vehicle_count) + ') ' + str(self.location_offset)
+               str(self.location) + '(' + str(self.location.vehicle_count) + ') ' + str(self.location_offset)\
+            +
+        '''
+        return "Vehicle" + str(self.unique_id) + \
+               " " + str(self.state) + '(' + str(self.waiting_time) + ') ' + \
+               str(self.location) + '(' + str(self.location.vehicle_count) + ') ' +\
+            'goes to'+str(self.path_ids.iloc[-1])
 
     def set_path(self):
         """
