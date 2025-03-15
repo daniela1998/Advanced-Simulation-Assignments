@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe41554d-9335-4939-9ca3-c4b8601f3435" name="Changes" comment="Upload draft code, testNetworkX.ipynb previous to implement network calculation in model.py. Also, attach some first steps in implementation in model.py">
-      <change afterPath="$PROJECT_DIR$/Celia/model/testinModel.ipynb" afterDir="false" />
+    <list default="true" id="fe41554d-9335-4939-9ca3-c4b8601f3435" name="Changes" comment="Second attempt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Celia/model/components.py" beforeDir="false" afterPath="$PROJECT_DIR$/Celia/model/components.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Celia/model/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Celia/model/model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Celia/model/model_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/Celia/model/model_run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Celia/testNetworkX.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Celia/testNetworkX.ipynb" afterDir="false" />
@@ -46,35 +44,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Test NetworkX (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test NetworkX.executor&quot;: &quot;Run&quot;,
-    &quot;Python.components.executor&quot;: &quot;Run&quot;,
-    &quot;Python.model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.model_run.executor&quot;: &quot;Run&quot;,
-    &quot;Python.model_viz.executor&quot;: &quot;Run&quot;,
-    &quot;Python.visualisation.executor&quot;: &quot;Run&quot;,
-    &quot;Python.visualisation2.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/Desktop/Localisimo/Advanced Simulation/Advanced-Simulation-Assignments/Celia&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Test NetworkX (1).executor": "Run",
+    "Python.Test NetworkX.executor": "Run",
+    "Python.components.executor": "Run",
+    "Python.model.executor": "Run",
+    "Python.model_Yao.executor": "Run",
+    "Python.model_run.executor": "Debug",
+    "Python.model_viz.executor": "Run",
+    "Python.visualisation.executor": "Run",
+    "Python.visualisation2.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Usuario/Desktop/Localisimo/Advanced Simulation/Advanced-Simulation-Assignments/Celia",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;Jupyter&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Jupyter"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Celia" />
@@ -91,8 +90,8 @@
       <recent name="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Assignment 2\EPA133a-G16-A2 FINAL\data\raw" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Test NetworkX">
-    <configuration name="Test NetworkX (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="model_run" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Advanced-Simulation-Assignments" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -101,49 +100,20 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Celia" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Move/EPA133a-Gxx-A3/model" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Celia/Test NetworkX.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Move/EPA133a-Gxx-A3/model/model_run.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test NetworkX" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Advanced-Simulation-Assignments" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment 3" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Celia\Test NetworkX.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.Test NetworkX" />
-        <item itemvalue="Python.Test NetworkX (1)" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -177,7 +147,7 @@
       <workItem from="1742023393896" duration="323000" />
       <workItem from="1742023744017" duration="17613000" />
       <workItem from="1742056398349" duration="428000" />
-      <workItem from="1742056893381" duration="280000" />
+      <workItem from="1742056893381" duration="5145000" />
     </task>
     <task id="LOCAL-00001" summary="move commit test">
       <option name="closed" value="true" />
@@ -291,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742034961908</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Second attempt">
+      <option name="closed" value="true" />
+      <created>1742057455827</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1742057455827</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,15 +299,28 @@
     <MESSAGE value="Exploring file deleted. &#10;Small mistake fixed in visualisation.py" />
     <MESSAGE value="Added reference to the printed function and location or merged_scenarios_summary.csv" />
     <MESSAGE value="Upload draft code, testNetworkX.ipynb previous to implement network calculation in model.py. Also, attach some first steps in implementation in model.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upload draft code, testNetworkX.ipynb previous to implement network calculation in model.py. Also, attach some first steps in implementation in model.py" />
+    <MESSAGE value="Second attempt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second attempt" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Celia/model/components.py</url>
+          <line>142</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model.coverage" NAME="model Coverage Results" MODIFIED="1742038204079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Celia/model" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model_run.coverage" NAME="model_run Coverage Results" MODIFIED="1742056814991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Move/EPA133a-Gxx-A3/model" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$components.coverage" NAME="components Coverage Results" MODIFIED="1740943455372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model_Yao.coverage" NAME="model_Yao Coverage Results" MODIFIED="1742057961530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Celia/model" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model_run.coverage" NAME="model_run Coverage Results" MODIFIED="1742062298657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Celia/model" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$components.coverage" NAME="components Coverage Results" MODIFIED="1742059037423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Celia/model" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$Test_NetworkX__1_.coverage" NAME="Test NetworkX (1) Coverage Results" MODIFIED="1741947940020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Celia" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$visualisation.coverage" NAME="visualisation Coverage Results" MODIFIED="1741285930575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$Test_NetworkX.coverage" NAME="Test NetworkX Coverage Results" MODIFIED="1742056407645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 3" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$Test_NetworkX.coverage" NAME="Test NetworkX Coverage Results" MODIFIED="1742057759366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 3" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$visualisation2.coverage" NAME="visualisation2 Coverage Results" MODIFIED="1741284410661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$components_Celia.coverage" NAME="components_Celia Coverage Results" MODIFIED="1740754353310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2_datacleaning/model" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model_viz.coverage" NAME="model_viz Coverage Results" MODIFIED="1741947967670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Celia/model" />
