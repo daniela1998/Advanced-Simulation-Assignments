@@ -3,12 +3,9 @@ from mesa.time import BaseScheduler
 from mesa.space import ContinuousSpace
 from components import Source, Sink, SourceSink, Bridge, Link, Intersection
 import pandas as pd
-import networkx as nx
-import matplotlib.pyplot as plt
-import random
 from collections import defaultdict
-
-
+import random
+import networkx as nx
 
 # ---------------------------------------------------------------
 def set_lat_lon_bound(lat_min, lat_max, lon_min, lon_max, edge_ratio=0.02):
@@ -91,7 +88,7 @@ class BangladeshModel(Model):
         self.G_nx = nx.Graph()
 
         for road in roads:
-            # Select all the objects on a particular road in the original order as in the CSV
+            # Select all the objects on a particular road in the original order as in the cvs
             df_objects_on_road = df[df['road'] == road]
 
             if not df_objects_on_road.empty:
@@ -120,6 +117,9 @@ class BangladeshModel(Model):
                 for i in range(len(df_objects_on_road) - 1):
                     self.G_nx.add_edge(df_objects_on_road.iloc[i]['id'], df_objects_on_road.iloc[i + 1]['id'],
                                        weight=df_objects_on_road.iloc[i]['length'])
+        # print the number of nodes and edges in the graph
+        print("Number of nodes: ", self.G_nx.number_of_nodes())
+        print("Number of edges: ", self.G_nx.number_of_edges())
 
         # put back to df with selected roads so that min and max and be easily calculated
         df = pd.concat(df_objects_all)
@@ -180,8 +180,10 @@ class BangladeshModel(Model):
         while True:
             # different source and sink
             sink = self.random.choice(self.sinks)
+            print (source, sink)
             if sink is not source:
                 break
+        #return self.path_ids_dict[source, sink]
         return self.compute_shortest_path_if_needed(source, sink)
 
     def get_route(self, source):
@@ -205,18 +207,19 @@ class BangladeshModel(Model):
     def compute_shortest_path_if_needed(self, source, sink):
         """
         Compute the shortest path using NetworkX only if it has not been stored yet.
-        - If `sink` is `None`, selects the end of the road as the default destination.
         - Uses `path_ids_dict` if a new shortest path was not computed.
         - Avoids overriding existing paths that may be default ones.
         """
         # If a new shortest path has been computed before, use it
         if (source, sink) in self.path_ids_dict:
+            print (self.path_ids_dict[(source, sink)])
             return self.path_ids_dict[(source, sink)]
 
         # Compute shortest path using NetworkX
         if sink and nx.has_path(self.G_nx, source, sink):
             path_ids = nx.shortest_path(self.G_nx, source, sink, weight='weight')
             self.path_ids_dict[(source, sink)] = path_ids  # Store new shortest path
+            print (path_ids)
             return path_ids
         else:
             return None  # No valid path found
