@@ -127,7 +127,7 @@ class Source(Infra):
         else:
             self.vehicle_generated_flag = False
 
-    #def generate_truck(self):
+    def generate_truck(self):
         """
         Generates a truck, sets its path, increases the global and local counters
         """
