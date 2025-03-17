@@ -4,11 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe41554d-9335-4939-9ca3-c4b8601f3435" name="Changes" comment="Second attempt">
+    <list default="true" id="fe41554d-9335-4939-9ca3-c4b8601f3435" name="Changes" comment="Third attempt after call with Yao. We find an error in Source class as an Exception error">
+      <change afterPath="$PROJECT_DIR$/.idea/Advanced-Simulation-Assignments.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_03_2025_11_20_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_03_2025_11_20__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_03_2025_11_38_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_03_2025_11_38__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_03_2025_16_00_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_03_2025_16_00__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_03_2025_11_46_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_03_2025_11_46__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2025_8_38_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2025_8_38__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2025_8_30_[Changes]/N1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2025_8_30_[Changes]/N1N2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2025_8_30_[Changes]/demo-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2025_8_30_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2025_8_30__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/data/Boxplot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/data/boxplot_output.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/data/demo-100.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/Vehicles-scenario0-seed 1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/Vehicles-scenario0-seed 2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/Vehicles-scenario0-seed 3.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/Vehicles-scenario0-seed 4.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/scenario0_summary.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model/celia_model_rachel/scenario0_summary_commas.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-Gxx-A2 FINAL/model_accumulation/model_rachel/scenario2_summary.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-Gxx-A2 FINAL/model_accumulation/model_rachel/scenario3_summary.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-Gxx-A2 FINAL/model_accumulation/model_rachel/scenario4_summary.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-Gxx-A2 FINAL/model_accumulation/model_rachel/scenario5_summary.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-Gxx-A2 FINAL/model_accumulation/model_rachel/scenario6_summary.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-Gxx-A2 FINAL/model_accumulation/model_rachel/scenario7_summary.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-Gxx-A2 FINAL/model_accumulation/model_rachel/scenario8_summary.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celia/model/model_Yao.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celia/model/network_Yao.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Celia/model/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Celia/model/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Celia/model/model_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/Celia/model/model_run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Celia/testNetworkX.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Celia/testNetworkX.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/experiment/scenario0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/experiment/scenario0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yao/model_Yao/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yao/model_Yao/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yao/model_Yao/model_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yao/model_Yao/model_run.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +88,7 @@
     "Python.components.executor": "Run",
     "Python.model.executor": "Run",
     "Python.model_Yao.executor": "Run",
-    "Python.model_run.executor": "Debug",
+    "Python.model_run.executor": "Run",
     "Python.model_viz.executor": "Run",
     "Python.visualisation.executor": "Run",
     "Python.visualisation2.executor": "Run",
@@ -65,7 +102,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -96,9 +133,6 @@
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Move/EPA133a-Gxx-A3/model" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -147,7 +181,8 @@
       <workItem from="1742023393896" duration="323000" />
       <workItem from="1742023744017" duration="17613000" />
       <workItem from="1742056398349" duration="428000" />
-      <workItem from="1742056893381" duration="5145000" />
+      <workItem from="1742056893381" duration="6043000" />
+      <workItem from="1742211870881" duration="3960000" />
     </task>
     <task id="LOCAL-00001" summary="move commit test">
       <option name="closed" value="true" />
@@ -269,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742057455827</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Second attempt">
+      <option name="closed" value="true" />
+      <created>1742062473481</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1742062473481</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +343,8 @@
     <MESSAGE value="Added reference to the printed function and location or merged_scenarios_summary.csv" />
     <MESSAGE value="Upload draft code, testNetworkX.ipynb previous to implement network calculation in model.py. Also, attach some first steps in implementation in model.py" />
     <MESSAGE value="Second attempt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second attempt" />
+    <MESSAGE value="Third attempt after call with Yao. We find an error in Source class as an Exception error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third attempt after call with Yao. We find an error in Source class as an Exception error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -316,7 +360,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model.coverage" NAME="model Coverage Results" MODIFIED="1742038204079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Celia/model" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model_Yao.coverage" NAME="model_Yao Coverage Results" MODIFIED="1742057961530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Celia/model" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model_run.coverage" NAME="model_run Coverage Results" MODIFIED="1742062298657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Celia/model" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model_run.coverage" NAME="model_run Coverage Results" MODIFIED="1742224158745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yao/model_Yao" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$components.coverage" NAME="components Coverage Results" MODIFIED="1742059037423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Celia/model" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$Test_NetworkX__1_.coverage" NAME="Test NetworkX (1) Coverage Results" MODIFIED="1741947940020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Celia" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$visualisation.coverage" NAME="visualisation Coverage Results" MODIFIED="1741285930575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model" />
