@@ -18,7 +18,7 @@ seed = 1234567
 
 sim_model = BangladeshModel(seed=seed)
 
-print(sim_model.G_nx)
+#print(sim_model.G_nx)
 
 # Check if the seed is set
 print("SEED " + str(sim_model._seed))
