@@ -1,0 +1,157 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"fe41554d-9335-4939-9ca3-c4b8601f3435\" name=\"Changes\" comment=\"Exploring file deleted. &#10;Small mistake fixed in visualisation.py\">\r\n      <change afterPath=\"$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model/test_vis.ipynb\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/README.md\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/README.md\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/data/demo_100.csv\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model/visualisation.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model/visualisation.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n        <option value=\"TypeScript File\" />\r\n        <option value=\"Jupyter Notebook\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {}\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/daniela1998/Advanced-Simulation-Assignments.git&quot;,\r\n    &quot;accountId&quot;: &quot;523617e2-fe91-48ba-b6d6-7c6d47c269eb&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2swHwbR0S8epdryFUIFw3HWTZtl\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Python.components.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.model.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.model_run.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.model_viz.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.visualisation.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.visualisation2.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/Desktop/Localisimo/Advanced Simulation/Advanced-Simulation-Assignments/Assignment 2/Celia - EPA133a-G16-A2/data&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [\r\n      &quot;Jupyter&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Usuario\\Desktop\\Localisimo\\Advanced Simulation\\Advanced-Simulation-Assignments\\Assignment 2\\Celia - EPA133a-G16-A2\\data\" />\r\n      <recent name=\"C:\\Users\\Usuario\\Desktop\\Localisimo\\Advanced Simulation\\Advanced-Simulation-Assignments\\Assignment 2\\Celia - EPA133a-G16-A2\\model\\celia_model_rachel\" />\r\n      <recent name=\"C:\\Users\\Usuario\\Desktop\\Localisimo\\Advanced Simulation\\Advanced-Simulation-Assignments\\Assignment 2\\Celia - EPA133a-G16-A2\\model\" />\r\n      <recent name=\"C:\\Users\\Usuario\\Desktop\\Localisimo\\Advanced Simulation\\Advanced-Simulation-Assignments\\Assignment 2\\Celia - EPA133a-G16-A2\\data\\processed\" />\r\n      <recent name=\"C:\\Users\\Usuario\\Desktop\\Localisimo\\Advanced Simulation\\Advanced-Simulation-Assignments\\Assignment 2\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Usuario\\Desktop\\Localisimo\\Advanced Simulation\\Advanced-Simulation-Assignments\\Assignment 2\\EPA133a-G16-A2 FINAL\" />\r\n      <recent name=\"C:\\Users\\Usuario\\Desktop\\Localisimo\\Advanced Simulation\\Advanced-Simulation-Assignments\\Assignment 2\\EPA133a-G16-A2 FINAL\\data\\raw\" />\r\n      <recent name=\"C:\\Users\\Usuario\\Desktop\\Localisimo\\Advanced Simulation\\Advanced-Simulation-Assignments\\Assignment 2\\Celia - EPA133a-G16-A2\\data\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-PY-243.23654.177\" />\r\n        <option value=\"bundled-python-sdk-91d3a02ef49d-43b77aa2d136-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.23654.177\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"fe41554d-9335-4939-9ca3-c4b8601f3435\" name=\"Changes\" comment=\"\" />\r\n      <created>1739359957039</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1739359957039</updated>\r\n      <workItem from=\"1739359958149\" duration=\"1446000\" />\r\n      <workItem from=\"1739366392556\" duration=\"351000\" />\r\n      <workItem from=\"1740825232368\" duration=\"3440000\" />\r\n      <workItem from=\"1740828714736\" duration=\"9884000\" />\r\n      <workItem from=\"1740938104887\" duration=\"5119000\" />\r\n      <workItem from=\"1741011413421\" duration=\"5835000\" />\r\n      <workItem from=\"1741025801450\" duration=\"11790000\" />\r\n      <workItem from=\"1741274455575\" duration=\"10586000\" />\r\n      <workItem from=\"1741349515390\" duration=\"1252000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"move commit test\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1739366436828</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1739366436828</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"move commit test2\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1739366515590</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1739366515590</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Added some comments about MESA prior version. This is also to check if my GIT works properly. &#10;&#10;In this code: &#10;self.schedule = BaseScheduler(self)&#10;self.schedule.step()&#10;&#10;Means: (from TPM Modelling)&#10;self.agents.do(&quot;step&quot;)\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1740765024274</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1740765024274</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Added some comments about MESA prior version. This is also to check if my GIT works properly. &#10;&#10;In this code: &#10;self.schedule = BaseScheduler(self)&#10;self.schedule.step()&#10;&#10;Means: (from TPM Modelling)&#10;self.agents.do(&quot;step&quot;)\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1741013083526</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1741013083526</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Added some comments about MESA prior version. This is also to check if my GIT works properly. &#10;&#10;In this code: &#10;self.schedule = BaseScheduler(self)&#10;self.schedule.step()&#10;&#10;Means: (from TPM Modelling)&#10;self.agents.do(&quot;step&quot;)\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1741033898449</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1741033898449</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"General README file.\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1741276939396</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1741276939397</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"General README file, update. Added new structure and notebook reference\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1741279453033</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1741279453033</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"General README file, update. Added new structure and notebook reference\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1741279646633</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1741279646633</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"General README file, update. Added new structure and notebook reference\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1741279711403</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1741279711403</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"General README file, update. Added new structure and notebook reference\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1741280438779</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1741280438779</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Runned the code: got all 9 scenario files in experiment folder. &#10;&#10;Visualisation now is an .py instead of notebook. It outputboxplot2.png&#10;&#10;Added Requirements (check if it is in correct format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1741285207863</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1741285207864</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Exploring file deleted. &#10;Small mistake fixed in visualisation.py\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1741285577273</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1741285577273</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"13\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"move commit test\" />\r\n    <MESSAGE value=\"move commit test2\" />\r\n    <MESSAGE value=\"Draft version of exporting. There is an error with the truck counter (class attribute of Source). Right now, with the second seed it keep counting vehicles, instead of resetting to 1&#10;&#10;Now: one csv about Vehicle data per seed and one summary csv per scenario with all the important stakeholder data\" />\r\n    <MESSAGE value=\"Draft version of exporting. There is an error with the truck counter (class attribute of Source). Right now, with the second seed it keep counting vehicles, instead of resetting to 1&#10;&#10;Now: one csv about Vehicle data per seed\" />\r\n    <MESSAGE value=\"Draft version of exporting. There is an error with the truck counter (class attribute of Source). Right now, with the second seed it keep counting vehicles, instead of resetting to 1&#10;&#10;Now: one csv about Vehicle data per seed and one summary csv per scenario with all the important stakeholder data\" />\r\n    <MESSAGE value=\"Added some comments about MESA prior version. This is also to check if my GIT works properly. &#10;&#10;In this code: &#10;self.schedule = BaseScheduler(self)&#10;self.schedule.step()&#10;&#10;Means: (from TPM Modelling)&#10;self.agents.do(&quot;step&quot;)\" />\r\n    <MESSAGE value=\"General README file.\" />\r\n    <MESSAGE value=\"General README file, update. Added new structure and notebook reference\" />\r\n    <MESSAGE value=\"Runned the code: got all 9 scenario files in experiment folder. &#10;&#10;Visualisation now is an .py instead of notebook. It outputboxplot2.png&#10;&#10;Added Requirements (check if it is in correct format\" />\r\n    <MESSAGE value=\"Exploring file deleted. &#10;Small mistake fixed in visualisation.py\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Exploring file deleted. &#10;Small mistake fixed in visualisation.py\" />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/Advanced_Simulation_Assignments$model.coverage\" NAME=\"model Coverage Results\" MODIFIED=\"1740944838060\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model\" />\r\n    <SUITE FILE_PATH=\"coverage/Advanced_Simulation_Assignments$model_run.coverage\" NAME=\"model_run Coverage Results\" MODIFIED=\"1741281616470\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model\" />\r\n    <SUITE FILE_PATH=\"coverage/Advanced_Simulation_Assignments$components.coverage\" NAME=\"components Coverage Results\" MODIFIED=\"1740943455372\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model\" />\r\n    <SUITE FILE_PATH=\"coverage/Advanced_Simulation_Assignments$visualisation.coverage\" NAME=\"visualisation Coverage Results\" MODIFIED=\"1741285930575\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model\" />\r\n    <SUITE FILE_PATH=\"coverage/Advanced_Simulation_Assignments$visualisation2.coverage\" NAME=\"visualisation2 Coverage Results\" MODIFIED=\"1741284410661\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model\" />\r\n    <SUITE FILE_PATH=\"coverage/Advanced_Simulation_Assignments$components_Celia.coverage\" NAME=\"components_Celia Coverage Results\" MODIFIED=\"1740754353310\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2_datacleaning/model\" />\r\n    <SUITE FILE_PATH=\"coverage/Advanced_Simulation_Assignments$model_viz.coverage\" NAME=\"model_viz Coverage Results\" MODIFIED=\"1740837230150\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f6218d46f3f70ef7bc3cb84fd3f90cfbe7882189)
++++ b/.idea/workspace.xml	(date 1741776409031)
+@@ -4,12 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="fe41554d-9335-4939-9ca3-c4b8601f3435" name="Changes" comment="Exploring file deleted. &#10;Small mistake fixed in visualisation.py">
+-      <change afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model/test_vis.ipynb" afterDir="false" />
++    <list default="true" id="fe41554d-9335-4939-9ca3-c4b8601f3435" name="Changes" comment="Added reference to the printed function and location or merged_scenarios_summary.csv">
++      <change afterPath="$PROJECT_DIR$/Assignment 3/Test NetworkX.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/README.md" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/data/demo_100.csv" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model/visualisation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model/visualisation.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -19,9 +16,9 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+-        <option value="Python Script" />
+         <option value="TypeScript File" />
+         <option value="Jupyter Notebook" />
++        <option value="Python Script" />
+       </list>
+     </option>
+   </component>
+@@ -47,6 +44,7 @@
+   </component>
+   <component name="PropertiesComponent">{
+   &quot;keyToString&quot;: {
++    &quot;Python.Test NetworkX.executor&quot;: &quot;Run&quot;,
+     &quot;Python.components.executor&quot;: &quot;Run&quot;,
+     &quot;Python.model.executor&quot;: &quot;Run&quot;,
+     &quot;Python.model_run.executor&quot;: &quot;Run&quot;,
+@@ -81,10 +79,41 @@
+       <recent name="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Assignment 2" />
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Assignment 3" />
+       <recent name="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Assignment 2\EPA133a-G16-A2 FINAL" />
+       <recent name="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Assignment 2\EPA133a-G16-A2 FINAL\data\raw" />
+       <recent name="C:\Users\Usuario\Desktop\Localisimo\Advanced Simulation\Advanced-Simulation-Assignments\Assignment 2\Celia - EPA133a-G16-A2\data" />
+     </key>
++  </component>
++  <component name="RunManager">
++    <configuration name="Test NetworkX" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="Advanced-Simulation-Assignments" />
++      <option name="ENV_FILES" value="" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment 3" />
++      <option name="IS_MODULE_SDK" value="true" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment 3/Test NetworkX.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Python.Test NetworkX" />
++      </list>
++    </recent_temporary>
+   </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+@@ -110,7 +139,9 @@
+       <workItem from="1741011413421" duration="5835000" />
+       <workItem from="1741025801450" duration="11790000" />
+       <workItem from="1741274455575" duration="10586000" />
+-      <workItem from="1741349515390" duration="1252000" />
++      <workItem from="1741349515390" duration="1463000" />
++      <workItem from="1741613435288" duration="131000" />
++      <workItem from="1741613584314" duration="1426000" />
+     </task>
+     <task id="LOCAL-00001" summary="move commit test">
+       <option name="closed" value="true" />
+@@ -208,7 +239,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1741285577273</updated>
+     </task>
+-    <option name="localTasksCounter" value="13" />
++    <task id="LOCAL-00013" summary="Added reference to the printed function and location or merged_scenarios_summary.csv">
++      <option name="closed" value="true" />
++      <created>1741350814148</created>
++      <option name="number" value="00013" />
++      <option name="presentableId" value="LOCAL-00013" />
++      <option name="project" value="LOCAL" />
++      <updated>1741350814148</updated>
++    </task>
++    <option name="localTasksCounter" value="14" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -236,13 +275,15 @@
+     <MESSAGE value="General README file, update. Added new structure and notebook reference" />
+     <MESSAGE value="Runned the code: got all 9 scenario files in experiment folder. &#10;&#10;Visualisation now is an .py instead of notebook. It outputboxplot2.png&#10;&#10;Added Requirements (check if it is in correct format" />
+     <MESSAGE value="Exploring file deleted. &#10;Small mistake fixed in visualisation.py" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Exploring file deleted. &#10;Small mistake fixed in visualisation.py" />
++    <MESSAGE value="Added reference to the printed function and location or merged_scenarios_summary.csv" />
++    <option name="LAST_COMMIT_MESSAGE" value="Added reference to the printed function and location or merged_scenarios_summary.csv" />
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model.coverage" NAME="model Coverage Results" MODIFIED="1740944838060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model" />
+     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model_run.coverage" NAME="model_run Coverage Results" MODIFIED="1741281616470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model" />
+     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$components.coverage" NAME="components Coverage Results" MODIFIED="1740943455372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model" />
+     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$visualisation.coverage" NAME="visualisation Coverage Results" MODIFIED="1741285930575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model" />
++    <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$Test_NetworkX.coverage" NAME="Test NetworkX Coverage Results" MODIFIED="1741613767132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 3" />
+     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$visualisation2.coverage" NAME="visualisation2 Coverage Results" MODIFIED="1741284410661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2 FINAL/model" />
+     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$components_Celia.coverage" NAME="components_Celia Coverage Results" MODIFIED="1740754353310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/EPA133a-G16-A2_datacleaning/model" />
+     <SUITE FILE_PATH="coverage/Advanced_Simulation_Assignments$model_viz.coverage" NAME="model_viz Coverage Results" MODIFIED="1740837230150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment 2/Celia - EPA133a-G16-A2/model" />
+Index: Assignment 3/Test NetworkX.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assignment 3/Test NetworkX.py b/Assignment 3/Test NetworkX.py
+new file mode 100644
+--- /dev/null	(date 1741688398300)
++++ b/Assignment 3/Test NetworkX.py	(date 1741688398300)
+@@ -0,0 +1,15 @@
++import networkx as nx
++import matplotlib.pyplot as plt
++
++
++if __name__ == '__main__':
++    G = nx.Graph()
++    G.add_node(1)
++    G.add_nodes_from([2, 3, 4, 5])
++    G.add_edge(1, 2)
++    G.add_edge(2, 3)
++    G.add_edge(2, 5)
++    G.add_edge(4, 5)
++    nx.draw(G, with_labels=True)
++    plt.show()
++    
+\ No newline at end of file
