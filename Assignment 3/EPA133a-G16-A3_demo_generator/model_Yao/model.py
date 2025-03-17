@@ -1,13 +1,11 @@
 from mesa import Model
 from mesa.time import BaseScheduler
 from mesa.space import ContinuousSpace
-from components import Source, Sink, SourceSink, Bridge, Link, Intersection, Vehicle
+from components import Source, Sink, SourceSink, Bridge, Link, Intersection
 import pandas as pd
 from collections import defaultdict
 import random
 import networkx as nx
-import csv
-
 
 # ---------------------------------------------------------------
 def set_lat_lon_bound(lat_min, lat_max, lon_min, lon_max, edge_ratio=0.02):
@@ -60,8 +58,7 @@ class BangladeshModel(Model):
 
     file_name = '../data/processed/demo_with_intersection.csv'
 
-    def __init__(self, seed=None, x_max=500, y_max=500, x_min=0, y_min=0,  
-                 probabilities={}, scenario=0):
+    def __init__(self, seed=None, x_max=500, y_max=500, x_min=0, y_min=0):
 
         self.schedule = BaseScheduler(self)
         self.running = True
@@ -69,13 +66,8 @@ class BangladeshModel(Model):
         self.space = None
         self.sources = []
         self.sinks = []
-        self.driving_times = []
-        self.bridge_delays = {}  # {bridge_id: total delay time}
-        self.total_wait_time = 0  # initialize total waiting time
-        self.probabilities = probabilities # insert probabilities dict
-        self.scenario = scenario
+
         self.generate_model()
-        self.broken_bridges = self.determine_broken_bridges()  # stores broken bridge IDs
 
     def generate_model(self):
         """
@@ -88,7 +80,7 @@ class BangladeshModel(Model):
 
         # a list of names of roads to be generated
         # TODO You can also read in the road column to generate this list automatically
-        roads = df['road'].unique()
+        roads = df.road.unique()
 
         df_objects_all = []
 
@@ -167,7 +159,7 @@ class BangladeshModel(Model):
                     self.sources.append(agent.unique_id)
                     self.sinks.append(agent.unique_id)
                 elif model_type == 'bridge':
-                    agent = Bridge(row['id'], self, row['condition'], row['length'], row['name'], row['road'])
+                    agent = Bridge(row['id'], self, row['length'], name, row['road'], row['condition'])
                 elif model_type == 'link':
                     agent = Link(row['id'], self, row['length'], name, row['road'])
                 elif model_type == 'intersection':
@@ -223,8 +215,11 @@ class BangladeshModel(Model):
             print (self.path_ids_dict[(source, sink)])
             return self.path_ids_dict[(source, sink)]
 
-        # Compute shortest path using NetworkX
-        if sink and nx.has_path(self.G_nx, source, sink):
+        # Otherwise, the keys (source, sink) do not have an assigned value.
+        # So we calculated it using the NetworkX's shortest path
+
+        elif sink and nx.has_path(self.G_nx, source, sink): #If sink != None and there is a doable path in the network
+                                                            # from Source to sink
             path_ids = nx.shortest_path(self.G_nx, source, sink, weight='weight')
             self.path_ids_dict[(source, sink)] = path_ids  # Store new shortest path
             print (path_ids)
@@ -237,97 +232,5 @@ class BangladeshModel(Model):
         Advance the simulation by one step.
         """
         self.schedule.step()
-    
-    def determine_broken_bridges(self):
-        """
-        Determine which bridges are broken at the start of the simulation.
-        """
-        broken_bridges = set()
-        for agent in self.schedule._agents.values():
-            if isinstance(agent, Bridge):
-                if ((agent.condition == 'A' and random.random() < agent.probabilities[self.scenario]['A']) or 
-                    (agent.condition == 'B' and random.random() < agent.probabilities[self.scenario]['B']) or 
-                    (agent.condition == 'C' and random.random() < agent.probabilities[self.scenario]['C']) or 
-                    (agent.condition == 'D' and random.random() < agent.probabilities[self.scenario]['D'])):
-                    broken_bridges.add(agent.unique_id)
-
-        #print(f"Broken bridges for this run: {broken_bridges}"
-        return broken_bridges
-
-    def get_average_driving_time(self):
-        if not self.driving_times:  # avoid division by zero
-            return 0
-        return sum(self.driving_times) / len(self.driving_times)
-
-
-    def get_biggest_bridge_delay(self):
-        '''
-        Return the 10 bridges with the biggest total delay time in a dictionary form.
-            key=name of the bridge
-            value=total accumulated delay time of the bridge
-        If there is no bridge with delay then return a tuple
-        with the first element being None (name of the bridge) and the second element being 0
-        (caused delay time by that bridge).
-        '''
-        if not self.bridge_delays:
-            return None, 0  # No bridge delays recorded
-        
-        top_10 = dict(sorted(self.bridge_delays.items(), key=lambda item: item[1], reverse=True)[:10])
-        return top_10
-
-
-    def get_total_delay_time(self):
-        '''
-        Return the total waiting time of all trucks that reached a Sink (end of the road).
-        '''
-        return self.total_wait_time
-    
-
-    def get_average_delay_time(self):
-        '''
-        Return the average waiting time of all trucks that reached a Sink (end of the road).
-        If no trucks reached a Sink, return 0.
-
-        We calculate the average waiting time by dividing the total waiting time
-        by the number of trucks that reached a Sink.
-        '''
-        total_trucks = len(self.driving_times)  # total trucks that reached a Sink
-        if total_trucks == 0:
-            return 0  # avoid division by zero
-        return self.total_wait_time / total_trucks
-    
-
-    def get_broken_bridges(self):
-        '''
-        Return the list of broken bridges
-        '''
-        return list(self.broken_bridges)
-    
-    def collect_data(self):
-        """
-        Collect data from the vehicles at each step.
-        """
-        for agent in self.schedule.agents:
-            if isinstance(agent, Vehicle):
-                self.data.append({
-                    'step': self.schedule.steps,
-                    'model type': agent.__class__.__name__,
-                    'id': agent.unique_id,
-                    'location': agent.location.unique_id,
-                    'location_offset': agent.location_offset,
-                    'state': agent.state.name,
-                    'waiting_time': agent.waiting_time,
-                    'generated_at_step': agent.generated_at_step,
-                    'removed_at_step': agent.removed_at_step,})
-                
-    def save_data(self, filename='scenario_non_numbered.csv'): #modified
-        """
-        Save collected data from the vehicles to a CSV file.
-        """
-        keys = self.data[0].keys()
-        with open(filename, 'w', newline='') as output_file:
-            dict_writer = csv.DictWriter(output_file, fieldnames=keys, delimiter =';') #modified
-            dict_writer.writeheader()
-            dict_writer.writerows(self.data)
 
 # EOF -----------------------------------------------------------

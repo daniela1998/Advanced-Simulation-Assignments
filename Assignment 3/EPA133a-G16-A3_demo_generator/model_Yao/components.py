@@ -1,6 +1,5 @@
 from mesa import Agent
 from enum import Enum
-import random
 
 
 # ---------------------------------------------------------------
@@ -22,8 +21,6 @@ class Infra(Agent):
 
     def __init__(self, unique_id, model, length=0,
                  name='Unknown', road_name='Unknown'):
-        
-        
         super().__init__(unique_id, model)
         self.length = length
         self.name = name
@@ -53,24 +50,19 @@ class Bridge(Infra):
 
     """
 
-    def __init__(self, unique_id, model, condition, length=0,
-                 name='Unknown', road_name='Unknown'):
+    def __init__(self, unique_id, model, length=0,
+                 name='Unknown', road_name='Unknown', condition='Unknown'):
         super().__init__(unique_id, model, length, name, road_name)
 
-
         self.condition = condition
-        self.probabilities = model.probabilities
 
+        # TODO
+        self.delay_time = self.random.randrange(0, 10)
+        # print(self.delay_time)
 
-    def get_delay_time(self): # in minutes
-        if self.length < 10:
-            return random.uniform(10, 20)
-        elif 10 <= self.length < 50:
-            return random.uniform(15, 60)
-        elif 50 <= self.length < 200:
-            return random.uniform(45, 90)
-        elif self.length >= 200:
-            return random.triangular(60, 120, 240)
+    # TODO
+    def get_delay_time(self):
+        return self.delay_time
 
 
 # ---------------------------------------------------------------
@@ -98,16 +90,9 @@ class Sink(Infra):
     vehicle_removed_toggle = False
 
     def remove(self, vehicle):
-        if vehicle in self.model.schedule.agents:
-            self.model.schedule.remove(vehicle)
-            self.vehicle_removed_toggle = not self.vehicle_removed_toggle
-            print(str(self) + ' REMOVE ' + str(vehicle))
-
-
-            # Store the driving time of this vehicle
-            driving_time = vehicle.removed_at_step - vehicle.generated_at_step
-            self.model.driving_times.append(driving_time)
-
+        self.model.schedule.remove(vehicle)
+        self.vehicle_removed_toggle = not self.vehicle_removed_toggle
+        print(str(self) + ' REMOVE ' + str(vehicle))
 
 
 # ---------------------------------------------------------------
