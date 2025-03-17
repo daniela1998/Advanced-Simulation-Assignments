@@ -1,0 +1,5 @@
+road;scenario;seed;Average driving time;Bridge with biggest delays;Bridge with biggest delays value;Total delay time;Average delay time per truck;Broken bridges
+N1;0;1;707;N1_788;173550.01370742693;172333;132;['N1_788']
+N1;0;2;578;;0;0;0;[]
+N1;0;3;578;;0;0;0;[]
+N1;0;4;578;;0;0;0;[]

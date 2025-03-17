@@ -215,8 +215,16 @@ class BangladeshModel(Model):
             print (self.path_ids_dict[(source, sink)])
             return self.path_ids_dict[(source, sink)]
 
+<<<<<<< HEAD
         # Compute shortest path using NetworkX
-        if sink and nx.has_path(self.G_nx, source, sink):
+        elif sink and nx.has_path(self.G_nx, source, sink):
+=======
+        # Otherwise, the keys (source, sink) do not have an assigned value.
+        # So we calculated it using the NetworkX's shortest path
+
+        elif sink and nx.has_path(self.G_nx, source, sink): #If sink != None and there is a doable path in the network
+                                                            # from Source to sink
+>>>>>>> f615faaec86ae83957f224a574ba10556018e6f5
             path_ids = nx.shortest_path(self.G_nx, source, sink, weight='weight')
             self.path_ids_dict[(source, sink)] = path_ids  # Store new shortest path
             print (path_ids)
