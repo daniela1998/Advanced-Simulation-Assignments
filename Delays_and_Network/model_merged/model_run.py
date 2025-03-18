@@ -1,5 +1,6 @@
 from model import BangladeshModel
 import pandas as pd
+import random
 
 """
     Run simulation
@@ -19,24 +20,28 @@ scenario = {
     4: {'A': 0.05, 'B': 0.1, 'C': 0.2, 'D': 0.4},
 }
 
-# run time 1000 ticks
-# run_length = 1000
+scenario_range = len(scenario)
 
-seed = 1234567
+# To generate the same seeds for each scenario
+def generate_seeds(num_seeds, initial_seed):
+    random.seed(initial_seed)
+    return [random.randint(0, 2**32 - 1) for _ in range(num_seeds)]
 
-sim_model = BangladeshModel(seed=seed, probabilities = scenario,  scenario = 1)
+# Generate a list of 5 seeds based on an initial seed
+initial_seed = 1234567
+seeds = generate_seeds(5, initial_seed)
 
-# Check if the seed is set
-print("SEED " + str(sim_model._seed))
+for n in range(scenario_range):
+    data_list = []
+    for seed in seeds:
+        sim_model = BangladeshModel(seed=seed, probabilities = scenario,  scenario = n)
 
-data_list = []
+        # One run with given steps
+        for i in range(run_length):
+            sim_model.step()
 
-# One run with given steps
-for i in range(run_length):
-    sim_model.step()
-
-# Get broken bridges and their conditions
-broken_bridges, conditions = sim_model.get_broken_bridges()
+        # Get broken bridges and their conditions
+        broken_bridges, conditions = sim_model.get_broken_bridges()
 
 data_list.append({
                     'Road': 'N1', # to modify
@@ -53,4 +58,4 @@ data_list.append({
 df = pd.DataFrame(data_list)
 
 # save to csv
-df.to_csv(f'../experiment/scenario{1}.csv', index=False)
+df.to_csv(f'../experiment/scenario{n}.csv', index=False)
