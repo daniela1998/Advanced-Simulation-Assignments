@@ -6,6 +6,7 @@ import pandas as pd
 from collections import defaultdict
 import random
 import networkx as nx
+import matplotlib.pyplot as plt
 
 # ---------------------------------------------------------------
 def set_lat_lon_bound(lat_min, lat_max, lon_min, lon_max, edge_ratio=0.02):
@@ -121,6 +122,14 @@ class BangladeshModel(Model):
         # print the number of nodes and edges in the graph
         print("Number of nodes: ", self.G_nx.number_of_nodes())
         print("Number of edges: ", self.G_nx.number_of_edges())
+
+        # Extract node positions for visualization
+        pos = nx.get_node_attributes(self.G_nx, 'pos')
+
+        # Draw the full network
+        plt.figure(figsize=(10, 7))
+        nx.draw(self.G_nx, pos, with_labels=False, node_color='orange', edge_color='gray', node_size=5, font_size=8)
+        plt.show()
 
         # put back to df with selected roads so that min and max and be easily calculated
         df = pd.concat(df_objects_all)
