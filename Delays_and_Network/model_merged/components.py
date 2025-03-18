@@ -71,6 +71,9 @@ class Bridge(Infra):
             return random.uniform(45, 90)
         elif self.length >= 200:
             return random.triangular(60, 120, 240)
+        
+    def get_condition(self):
+        return self.condition 
 
 
 # ---------------------------------------------------------------

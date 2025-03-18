@@ -13,7 +13,11 @@ run_length = 5 * 24 * 60
 
 scenario = {
     0: {'A': 0.0, 'B': 0.0, 'C': 0.0, 'D': 0.0},
-    1: {'A': 0.7, 'B': 0.0, 'C': 0.0, 'D': 0.05},}
+    1: {'A': 0.0, 'B': 0.0, 'C': 0.0, 'D': 0.05},
+    2: {'A': 0.0, 'B': 0.0, 'C': 0.05, 'D': 0.1},
+    3: {'A': 0.0, 'B': 0.05, 'C': 0.1, 'D': 0.2},
+    4: {'A': 0.05, 'B': 0.1, 'C': 0.2, 'D': 0.4},
+}
 
 # run time 1000 ticks
 # run_length = 1000
@@ -31,6 +35,9 @@ data_list = []
 for i in range(run_length):
     sim_model.step()
 
+# Get broken bridges and their conditions
+broken_bridges, conditions = sim_model.get_broken_bridges()
+
 data_list.append({
                     'Road': 'N1', # to modify
                     'Scenario': 1,
@@ -38,10 +45,11 @@ data_list.append({
                     'Average_driving_time': sim_model.get_average_driving_time(),
                     'Total_waiting_time': sim_model.get_total_delay_time(),
                     'Average_waiting_time': sim_model.get_average_delay_time(),
-                    'Broken_bridges': ', '.join(sim_model.get_broken_bridges()),
-
-                })
-
+                    'Broken_bridges': ', '.join(broken_bridges),
+                    'Condition': ', '.join(conditions)  # Add broken bridge conditions
+                })  
+                
+  
 df = pd.DataFrame(data_list)
 
 # save to csv

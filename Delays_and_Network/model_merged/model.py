@@ -58,7 +58,7 @@ class BangladeshModel(Model):
 
     step_time = 1
 
-    file_name = 'demo-4.csv'
+    file_name = 'demo_with_intersection.csv'
 
     def __init__(self, seed=None, x_max=500, y_max=500, x_min=0, y_min=0,  
                  probabilities={}, scenario=0):
@@ -243,6 +243,7 @@ class BangladeshModel(Model):
         Determine which bridges are broken at the start of the simulation.
         """
         broken_bridges = set()
+        conditions =[]
         for agent in self.schedule._agents.values():
             if isinstance(agent, Bridge):
                 if ((agent.condition == 'A' and random.random() < agent.probabilities[self.scenario]['A']) or 
@@ -250,9 +251,10 @@ class BangladeshModel(Model):
                     (agent.condition == 'C' and random.random() < agent.probabilities[self.scenario]['C']) or 
                     (agent.condition == 'D' and random.random() < agent.probabilities[self.scenario]['D'])):
                     broken_bridges.add(agent.unique_id)
+                    conditions.append(agent.condition)
 
         #print(f"Broken bridges for this run: {broken_bridges}"
-        return broken_bridges
+        return broken_bridges, conditions
 
     def get_average_driving_time(self):
         if not self.driving_times:  # avoid division by zero
