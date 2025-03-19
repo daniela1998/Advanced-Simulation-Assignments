@@ -252,7 +252,6 @@ class BangladeshModel(Model):
         Determine which bridges are broken at the start of the simulation.
         """
         broken_bridges = set()
-        conditions =[]
         for agent in self.schedule._agents.values():
             if isinstance(agent, Bridge):
                 if ((agent.condition == 'A' and random.random() < agent.probabilities[self.scenario]['A']) or 
@@ -260,10 +259,9 @@ class BangladeshModel(Model):
                     (agent.condition == 'C' and random.random() < agent.probabilities[self.scenario]['C']) or 
                     (agent.condition == 'D' and random.random() < agent.probabilities[self.scenario]['D'])):
                     broken_bridges.add(agent.unique_id)
-                    conditions.append(agent.condition)
 
         #print(f"Broken bridges for this run: {broken_bridges}"
-        return broken_bridges, conditions
+        return broken_bridges
 
     def get_average_driving_time(self):
         # Averag driving time of all trucks that reached a Sink (end of the road)
