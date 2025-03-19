@@ -39,7 +39,7 @@ data_list.append({
                     'Total_waiting_time': sim_model.get_total_delay_time(),
                     'Average_waiting_time': sim_model.get_average_delay_time(),
                     'Broken_bridges': ', '.join(sim_model.get_broken_bridges()),
-                    'Average_truck_speeds': sim_model.get_truck_speeds(),
+                    'Average_truck_speeds': sim_model.get_truck_speeds()
 
                 })
 
