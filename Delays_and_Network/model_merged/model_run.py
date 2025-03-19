@@ -41,7 +41,7 @@ for n in range(scenario_range):
             sim_model.step()
 
         # Get broken bridges and their conditions
-        broken_bridges, conditions = sim_model.get_broken_bridges()
+        broken_bridges, conditions = sim_model.determine_broken_bridges()
 
 data_list.append({
                     'Road': 'N1', # to modify
