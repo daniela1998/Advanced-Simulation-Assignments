@@ -106,6 +106,7 @@ class Sink(Infra):
 
             # Store the driving time of this vehicle
             driving_time = vehicle.removed_at_step - vehicle.generated_at_step
+            print(driving_time)
             self.model.driving_times.append(driving_time)
 
 
