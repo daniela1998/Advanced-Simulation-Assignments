@@ -266,6 +266,7 @@ class BangladeshModel(Model):
         return broken_bridges, conditions
 
     def get_average_driving_time(self):
+        # Averag driving time of all trucks that reached a Sink (end of the road)
         if not self.driving_times:  # avoid division by zero
             return 0
         return sum(self.driving_times) / len(self.driving_times)
@@ -330,6 +331,7 @@ class BangladeshModel(Model):
                     'waiting_time': agent.waiting_time,
                     'generated_at_step': agent.generated_at_step,
                     'removed_at_step': agent.removed_at_step,})
+                
                 
     def save_data(self, filename='scenario_non_numbered.csv'): #modified
         """
