@@ -1,78 +1,139 @@
-# Simple Transport Model Demo in MESA
+# README File
+ ## WORK IN PROGRESS!! 
+Created by: EPA133a Group 16
 
-Created by:
-Yilin HUANG
+|    Name     | Student Number |
+| :---------: | :------------- |
+| Rachel Delvin Sutiono | 6284736        |
+|  Celia Martínez Sillero  | 6222102         |
+| Daniela Ríos Mora | 6275486       |
+| Thunchanok Phutthaphaiboon| 6141153        |
+| Yao Wang | 6157513         |
 
-Email:
-y.huang@tudelft.nl
 
-Version:
-1.1
 
 ## Introduction
 
-A simple transport model demo in MESA for EPA133a Advanced Simulation course Assignment 3.
+In the folder (EPA133a-G16-A3),  can find place group 16's lab submission for the Assignment 3.
 
-## How to Use
+This README file is to help a first-time user understand what it is about and how they might be able to use it.
+ 
 
-- Create and activate a virtual environment
+## Purpose and objective of this project
 
-In PyCharm, you can create a virtual environment by following the steps below:
+Expanding on our previous work, we model goods transport along N1, N2, and their major side roads, automatically generating road and bridge components from the infrastructure data. Through this assignment, we aim to build a transport simulation that provides valuable insights into the effects of infrastructure failures on traffic flow.
 
-    1. Open the project in PyCharm
-    2. Go to Settings -> Project: epa133a -> Python Interpreter
-    3. Click "Add Interpreter"
-    4. Select "Add Local Interpreter"
-    5. Select Virtualenv Environment
-    6. Select New environment
-    7. Select Base interpreter as Python 3.11
-    8. Click OK and also close the settings with OK
+## Structure
 
-Afterwards, you should see "Python 3.11" (epa133a) in the bottom-right corner of the PyCharm window.
-To install the requirements, open a terminal/command line window in PyCharm and type:
+The following submission is provided with the following structure:
+Structure inside this ZIP file: 
 
-```
-    $ pip install -r requirements.txt
-```
+    Folder EPA133a-G16-A3
 
-- Launch the simulation model with visualization
+        Subfolder data
+            Subfolder raw
+               -_roads3.csv
+                -BMMS_overview.xlsx
+                -demo-4.csv
 
-```
-    $ python model_viz.py
-```
+            Subfolder processed
+                -demo_with_intersection.csv (current data for the model)
 
-- Launch the simulation model without visualization
+            Subfolder experiment (CHANGE)
+                -merged_scenarios_summary.csv
+                -scenario0.csv
+                -scenario1.csv
+                -scenario2.csv
+                -scenario3.csv
+                -scenario4.csv
+                -scenario5.csv
+                -scenario6.csv
+                -scenario7.csv
+                -scenario8.csv
 
-```
-    $ python model_run.py
-```
+      Subfolder model
+            Subfolder Continuous Space
+                -continuous_space.py
+                -continuous_space_viz.py
+            -model.py
+            -components.py
+            -model_viz.py
+            -exploring.py
+            -model_run.py
+            -requirements.txt
+            -Visualisation.ipynb
+            -README.md
 
-## Files
+      Subfolder report
+            -EPA133a-G16-A3-Report.pdf
 
-- [model.py](model.py): Contains the model `BangladeshModel` which is a subclass of Mesa `Model`. It reads a `csv` file with specific format for (transport) model generation. (See the README in the `data` directory for data format.) In addition to dynamic behavior, each model component instance (i.e., object) also has geo-location variables, i.e. latitude and longitude in Decimal Degrees (DD). The given bounds of the latitude and longitude of all objects are translated into the bounds of the HTML5 canvas, which is used in case the visualization is launched.
 
-  In this file, you modify the model generation and add your own routines.
 
-- [components.py](components.py): Contains the model component definitions for the (main) model. Check the file carefully to see which components are already defined.
+      -README.md (this file)
 
-  In this file, you modify and add your own components.
+
+## Main Files
+
+- [model.py](model.py): Contains the model `BangladeshModel` which is a subclass of Mesa `Model`.  It reads a `csv` file with specific format for (transport) model generation.In this case it reads [demo_100.csv](demo_100.csv) which is the file with the information of road N1.
+
+- [components.py](components.py): Contains the model component definitions for the (main) model. 
 
 - [model_viz.py](model_viz.py): Sets up the visualization; uses the `SimpleCanvas` element defined. Calls the model. Run the visualization server.
 
-  In this file, you define simple visualization.
-
 - [model_run.py](model_run.py): Sets up the model run (conditions). Calls the model. Run the simulation without visualization.
 
-  In this file, you define model batch runs.
+- [requirements.txt](requirements.txt): Contains the required libraries to run the model.
+
+- [visualisation.py](visualisation.py): Contains the code to visualize the boxplot of the nine scenarios.
+
+- [README.md](README.md): This file.
 
 - [ContinuousSpace](ContinuousSpace): The directory contains files needed to visualize Python3 Mesa models on a continuous canvas with geo-coordinates, a functionality not contained in the current Mesa package.
 
-  Editing files in this directory is NOT recommended for our assignment.
-
 - [ContinuousSpace/SimpleContinuousModule.py](ContinuousSpace/SimpleContinuousModule.py): Defines `SimpleCanvas`, the Python side of a custom visualization module for drawing objects with continuous positions. This is a slight adaptation of the Flocker example provided by the Mesa project.
 
-  Editing this file is NOT recommended for our assignment.
+- [ContinuousSpace/simple_continuous_canvas.js](ContinuousSpace/simple_continuous_canvas.js): JavaScript side of the `SimpleCanvas` visualization module. It takes the output generated by the Python `SimpleCanvas` element and draws it in the browser window via HTML5 canvas. It can draw circles and rectangles. Both can have text annotation. 
 
-- [ContinuousSpace/simple_continuous_canvas.js](ContinuousSpace/simple_continuous_canvas.js): JavaScript side of the `SimpleCanvas` visualization module. It takes the output generated by the Python `SimpleCanvas` element and draws it in the browser window via HTML5 canvas. It can draw circles and rectangles. Both can have text annotation. This file is an adaptation of the Flocker example provided by the Mesa project.
 
-  Editing this file is NOT recommended for our assignment.
+
+
+## How to Use
+
+The main file for the user to get the results is [model_run.py](model/model_run.py). This file contains the code to run the simulation model without visualization. 
+
+1. Run the notebook [CreateDemoFile.ipynb](notebook/CreateDemoFile.ipynb) to create the demo_100.csv file. This file creates the csv with the information of the road N1.
+ 
+    Input: [_roads3.csv](data/raw/_roads3.csv), [BMMS_overview.xlsx](data/raw/BMMS_overview.xlsx)
+    Output:
+           [demo_100csv](data/processed/demo_100.csv).
+
+2. Run model_run.py to get the results of the simulation. The results of each step will be printed in the console. 
+ 
+    Output:
+                Results per step in terminal,(__Note: to reduce computational time, we commented the Vehicle print functions__)
+                [scenario0.csv](data/processed/scenario0.csv),
+                [scenario1.csv](data/processed/scenario1.csv),
+                [scenario2.csv](data/processed/scenario2.csv),
+                [scenario3.csv](data/processed/scenario3.csv),
+                [scenario4.csv](data/processed/scenario4.csv),
+                [scenario5.csv](data/processed/scenario5.csv),
+                [scenario6.csv](data/processed/scenario6.csv),
+                [scenario7.csv](data/processed/scenario7.csv),
+                [scenario8.csv](data/processed/scenario8.csv),
+
+3. To visualize the results: run the [visualisation.py](model/visualisation.py) file. This file contains the code to visualize the boxplot of the nine scenarios.
+    Input: all 9 csv scenario files. (see 2.)
+    Output: [outputboxplot2.png](img/outputboxplot2.png)
+
+Please, keep in mind that the computational time to run the 9 scenarios is long.
+We commented the VehicleTruck printing function to reduce time to 15 mins run.
+More specifically, we commented the last line of code of the step function of the Vehicle(Agent) class:
+
+
+More specifically, we commented the last line of code of the `step` function of the `Vehicle` (Agent) class in the `components.py` file:
+
+print(self)
+
+
+You can find the [step function](Assignment 2/EPA133a-G16-A2 FINAL/model/components.py:242)  in (components.py>Vehicle(Agent)>step()) function in the `Vehicle` class in the `components.py` file.
+Find attached the results of the simulation in the [experiment](experiment) folder. 

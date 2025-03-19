@@ -207,8 +207,8 @@ class BangladeshModel(Model):
     def get_route(self, source):
         """
         Select which routing method to use.
-        - 20% chance: Takes a straight route to the end of the road.
-        - 80% chance: Picks a random sink.
+        - 0.1% chance: Takes a straight route to the end of the road.
+        - 99.9% chance: Picks a random sink.
         - Both cases use shortest path lookup but only compute if not already stored.
         """
         if self.random.random() < 0.01:
