@@ -59,7 +59,7 @@ class BangladeshModel(Model):
 
     step_time = 1
 
-    file_name = 'demo_with_intersection.csv'
+    file_name = '../data/demo_with_intersection.csv'
 
     def __init__(self, seed=None, x_max=500, y_max=500, x_min=0, y_min=0,  
                  probabilities={}, scenario=0):

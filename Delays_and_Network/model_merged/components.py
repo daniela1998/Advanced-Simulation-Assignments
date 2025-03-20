@@ -319,6 +319,8 @@ class Vehicle(Agent):
         """
         if self.state == Vehicle.State.WAIT:
             self.waiting_time = max(self.waiting_time - 1, 0)
+            
+            self.model.total_wait_time += 1
             if self.waiting_time == 0:
                 self.waited_at = self.location
                 self.state = Vehicle.State.DRIVE
@@ -350,6 +352,7 @@ class Vehicle(Agent):
         vehicle shall move to the next object with the given distance
         """
         while True:
+            self.location_index += 1
             next_id = self.path_ids[self.location_index]
             new_index = len(self.path_ids) - 1
             next_infra = self.model.schedule._agents[next_id]  # Access to protected member _agents
@@ -387,7 +390,6 @@ class Vehicle(Agent):
             
             # Susbtract distance and continue to next infrastructure
             distance -= next_infra.length
-            self.location_index += 1
 
     def arrive_at_next(self, next_infra, location_offset):
         """

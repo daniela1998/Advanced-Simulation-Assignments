@@ -1,6 +1,7 @@
 from model import BangladeshModel
 import pandas as pd
 import random
+import numpy as np
 """
     Run simulation
     Print output at terminal
@@ -29,34 +30,32 @@ def generate_seeds(num_seeds, initial_seed):
 # Generate a list of 5 seeds based on an initial seed
 #initial_seed = 1234567
 #seeds = generate_seeds(5, initial_seed)
-seeds = [1234567]
+#seeds = [1,2,3,4,5,6,7]
 
 for n in range(scenario_range):
-    data_list = []
-    for seed in seeds:
-        sim_model = BangladeshModel(seed=seed, probabilities = scenario,  scenario = 0)
 
-        # One run with given steps
+    seeds = (np.random.randint(100000, 999999, size=3)) # 10 scenarios
+
+    data_list = []
+    
+    for seed in seeds:
+        sim_model = BangladeshModel(seed=int(seed), probabilities=scenario, scenario=n)
+
         for i in range(run_length):
             sim_model.step()
 
-        # Get broken bridges and their conditions
-        conditions = 0
-
-data_list.append({
-                    'Road': 'N1', # to modify
-                    'Scenario': 4,
+        data_list.append({
+                    'Road': 'N1',
+                    'Scenario': n,
                     'Seed': seed,
                     'Average_driving_time': sim_model.get_average_driving_time(),
                     'Total_waiting_time': sim_model.get_total_delay_time(),
-                    'Average_waiting_time': sim_model.get_average_delay_time()
+                    #'Average_waiting_time': sim_model.get_average_delay_time(),
                     #'Broken_bridges': ', '.join(sim_model.get_broken_bridges()),
-                    #'Condition': conditions # Add broken bridge conditions
-                    #'Average_truck_speeds': sim_model.get_truck_speeds()
-                })  
-                
-  
-df = pd.DataFrame(data_list)
 
-# save to csv
-df.to_csv(f'../experiment/scenario{8765}.csv', index=False)
+                })
+
+        df = pd.DataFrame(data_list)
+
+        # save to csv
+        df.to_csv(f'../experiment/scenario{n}.csv', index=False)

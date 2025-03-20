@@ -43,20 +43,20 @@ for n in range(scenario_range):
         # Get broken bridges and their conditions
         broken_bridges, conditions = sim_model.determine_broken_bridges()
 
-data_list.append({
-                    'Road': 'N1', # to modify
-                    'Scenario': 1,
-                    'Seed': seed,
-                    'Average_driving_time': sim_model.get_average_driving_time(),
-                    'Total_waiting_time': sim_model.get_total_delay_time(),
-                    'Average_waiting_time': sim_model.get_average_delay_time(),
-                    'Broken_bridges': ', '.join(broken_bridges),
-                    'Condition': ', '.join(conditions),  # Add broken bridge conditions
-                    'Average_truck_speeds': sim_model.get_truck_speeds()
-                })  
-                
-  
-df = pd.DataFrame(data_list)
+    data_list.append({
+                        'Road': 'N1', # to modify
+                        'Scenario': 1,
+                        'Seed': seed,
+                        'Average_driving_time': sim_model.get_average_driving_time(),
+                        'Total_waiting_time': sim_model.get_total_delay_time(),
+                        'Average_waiting_time': sim_model.get_average_delay_time(),
+                        'Broken_bridges': ', '.join(broken_bridges),
+                        'Condition': ', '.join(conditions),  # Add broken bridge conditions
+                        'Average_truck_speeds': sim_model.get_truck_speeds()
+                    })  
+                    
+    
+    df = pd.DataFrame(data_list)
 
-# save to csv
-df.to_csv(f'../experiment/scenario{n}.csv', index=False)
+    # save to csv
+    df.to_csv(f'../experiment/scenario{n}.csv', index=False)
