@@ -275,7 +275,7 @@ class Vehicle(Agent):
     """
 
     # 50 km/h translated into meter per min
-    speed = 50 * 1000 / 60
+    speed = 48 * 1000 / 60
     # One tick represents 1 minute
     step_time = 10
 
@@ -319,7 +319,7 @@ class Vehicle(Agent):
         """
         if self.state == Vehicle.State.WAIT:
             self.waiting_time = max(self.waiting_time - 1, 0)
-            
+
             self.model.total_wait_time += 1
             if self.waiting_time == 0:
                 self.waited_at = self.location
