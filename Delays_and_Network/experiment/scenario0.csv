@@ -1,3 +1,6 @@
-Road,Scenario,Seed,Average_driving_time,Total_waiting_time
-N1,0,897085,25.06577119036591,0
-N1,0,575539,25.077386468952735,0
+Scenario,Seed,Average_driving_time,Total_waiting_time,Average_waiting_time,Categories,Broken_bridges
+0,399247,25.302918017600742,0,0.0,,
+0,342620,24.832329782306623,0,0.0,,
+0,534860,24.680259499536607,0,0.0,,
+0,889940,25.149212233549584,0,0.0,,
+0,739830,24.832792959703568,0,0.0,,

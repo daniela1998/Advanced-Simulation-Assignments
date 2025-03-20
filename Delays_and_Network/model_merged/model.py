@@ -76,6 +76,7 @@ class BangladeshModel(Model):
         self.total_wait_time = 0  # initialize total waiting time
         self.probabilities = probabilities # insert probabilities dict
         self.scenario = scenario
+        self.condition_list = []
         self.generate_model()
         self.broken_bridges = self.determine_broken_bridges()  # stores broken bridge IDs
 
@@ -135,9 +136,9 @@ class BangladeshModel(Model):
         pos = nx.get_node_attributes(self.G_nx, 'pos')
 
         # Draw the full network
-        plt.figure(figsize=(10, 7))
-        nx.draw(self.G_nx, pos, with_labels=False, node_color='orange', edge_color='gray', node_size=5, font_size=8)
-        plt.show()
+        #plt.figure(figsize=(10, 7))
+        #nx.draw(self.G_nx, pos, with_labels=False, node_color='orange', edge_color='gray', node_size=5, font_size=8)
+        #plt.show()
 
         # put back to df with selected roads so that min and max and be easily calculated
         df = pd.concat(df_objects_all)
@@ -206,9 +207,6 @@ class BangladeshModel(Model):
         #return self.path_ids_dict[source, sink]
         return self.compute_shortest_path_if_needed(source, sink)
     
-    def get_route_name(self):
-            return f"{Vehicle.source}_{Vehicle.sink}"
-
 
     def get_route(self, source):
         """
@@ -251,7 +249,7 @@ class BangladeshModel(Model):
         path_distance = nx.shortest_path_length(self.G_nx, source, sink, weight='weight')
         self.driving_distance.append(path_distance)
 
-        print(f"Path: {path_ids}, Distance: {path_distance}, Source: {source}, Sink: {sink}")
+        #print(f"Path: {path_ids}, Distance: {path_distance}, Source: {source}, Sink: {sink}")
 
         return path_ids
 
@@ -273,6 +271,7 @@ class BangladeshModel(Model):
                     (agent.condition == 'C' and random.random() < agent.probabilities[self.scenario]['C']) or 
                     (agent.condition == 'D' and random.random() < agent.probabilities[self.scenario]['D'])):
                     broken_bridges.add(agent.unique_id)
+                    self.condition_list.append(agent.condition)
 
         #print(f"Broken bridges for this run: {broken_bridges}"
         return broken_bridges
@@ -351,6 +350,7 @@ class BangladeshModel(Model):
         Return the list of broken bridges
         '''
         return list(self.broken_bridges)
+    
     
     def collect_data(self):
         """
