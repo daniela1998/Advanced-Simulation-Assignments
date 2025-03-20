@@ -46,14 +46,14 @@ for n in range(scenario_range):
             sim_model.step()
 
         data_list.append({
-                    'Road': 'N1',
+                    'Path': sim_model.get_route_name(),
                     'Scenario': n,
                     'Seed': seed,
                     'Average_driving_time': sim_model.get_average_driving_time(),
                     'Total_waiting_time': sim_model.get_total_delay_time(),
-                    #'Average_waiting_time': sim_model.get_average_delay_time(),
-                    #'Broken_bridges': ', '.join(sim_model.get_broken_bridges()),
-
+                    'Average_waiting_time': sim_model.get_average_delay_time(),
+                    'Broken_bridges': ', '.join(sim_model.get_broken_bridges())
+                    #'Average Speed': sim_model.get_truck_speeds(),
                 })
 
         df = pd.DataFrame(data_list)

@@ -299,6 +299,7 @@ class Vehicle(Agent):
         self.waited_at = None
         self.removed_at_step = None
         self.sink = None  # Add an attribute to store the sink value
+        self.source = None  # Add an attribute to store the source value
 
 
     def __str__(self):
@@ -354,9 +355,11 @@ class Vehicle(Agent):
         while True:
             self.location_index += 1
             next_id = self.path_ids[self.location_index]
+            self.source = self.path_ids[0] # To return source for road
             new_index = len(self.path_ids) - 1
             next_infra = self.model.schedule._agents[next_id]  # Access to protected member _agents
-            end= self.path_ids[new_index]
+            end= self.path_ids[new_index] 
+            self.sink = end # To return sink for road
 
             if isinstance(next_infra, SourceSink):
                 # arrive at the sink

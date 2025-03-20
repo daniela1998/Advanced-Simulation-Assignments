@@ -201,9 +201,14 @@ class BangladeshModel(Model):
             print (source, sink)
             if sink is not source:
                 Vehicle.sink = sink
+                Vehicle.source = source
                 break
         #return self.path_ids_dict[source, sink]
         return self.compute_shortest_path_if_needed(source, sink)
+    
+    def get_route_name(self):
+            return f"{Vehicle.source}_{Vehicle.sink}"
+
 
     def get_route(self, source):
         """
