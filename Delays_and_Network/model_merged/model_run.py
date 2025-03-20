@@ -17,7 +17,7 @@ scenario = {
     1: {'A': 0.0, 'B': 0.0, 'C': 0.0, 'D': 0.05},
     2: {'A': 0.0, 'B': 0.0, 'C': 0.05, 'D': 0.1},
     3: {'A': 0.0, 'B': 0.05, 'C': 0.1, 'D': 0.2},
-    4: {'A': 0.05, 'B': 0.1, 'C': 0.2, 'D': 0.4},
+    4: {'A': 0.9, 'B': 0.1, 'C': 0.2, 'D': 0.4},
 }
 
 scenario_range = len(scenario)
@@ -41,7 +41,7 @@ for n in range(scenario_range):
             sim_model.step()
 
         # Get broken bridges and their conditions
-        broken_bridges, conditions = sim_model.get_broken_bridges()
+        broken_bridges, conditions = sim_model.determine_broken_bridges()
 
 data_list.append({
                     'Road': 'N1', # to modify
