@@ -200,6 +200,7 @@ class BangladeshModel(Model):
             sink = self.random.choice(self.sinks)
             print (source, sink)
             if sink is not source:
+                Vehicle.sink = sink
                 break
         #return self.path_ids_dict[source, sink]
         return self.compute_shortest_path_if_needed(source, sink)
@@ -245,7 +246,7 @@ class BangladeshModel(Model):
         path_distance = nx.shortest_path_length(self.G_nx, source, sink, weight='weight')
         self.driving_distance.append(path_distance)
 
-        print(f"Path: {path_ids}, Distance: {path_distance}")
+        print(f"Path: {path_ids}, Distance: {path_distance}, Source: {source}, Sink: {sink}")
 
         return path_ids
 
