@@ -9,7 +9,7 @@ import pandas as pd
 # ---------------------------------------------------------------
 
 # run time 5 x 24 hours; 1 tick 1 minute
-run_length = 1 * 24 * 60
+run_length = 1 * 1 * 5
 
 scenario = {
     0: {'A': 0.0, 'B': 0.0, 'C': 0.0, 'D': 0.0},
@@ -39,6 +39,7 @@ data_list.append({
                     'Total_waiting_time': sim_model.get_total_delay_time(),
                     'Average_waiting_time': sim_model.get_average_delay_time(),
                     'Broken_bridges': ', '.join(sim_model.get_broken_bridges()),
+                    'Average_truck_speeds': sim_model.get_truck_speeds()
 
                 })
 
@@ -46,3 +47,4 @@ df = pd.DataFrame(data_list)
 
 # save to csv
 df.to_csv(f'../experiment/scenario{1}.csv', index=False)
+

@@ -7,7 +7,7 @@ from collections import defaultdict
 import random
 import networkx as nx
 import csv
-
+import matplotlib.pyplot as plt
 
 # ---------------------------------------------------------------
 def set_lat_lon_bound(lat_min, lat_max, lon_min, lon_max, edge_ratio=0.02):
@@ -70,6 +70,7 @@ class BangladeshModel(Model):
         self.sources = []
         self.sinks = []
         self.driving_times = []
+        self.driving_distance = []
         self.bridge_delays = {}  # {bridge_id: total delay time}
         self.total_wait_time = 0  # initialize total waiting time
         self.probabilities = probabilities # insert probabilities dict
@@ -129,6 +130,14 @@ class BangladeshModel(Model):
         # print the number of nodes and edges in the graph
         print("Number of nodes: ", self.G_nx.number_of_nodes())
         print("Number of edges: ", self.G_nx.number_of_edges())
+
+        # Extract node positions for visualization
+        pos = nx.get_node_attributes(self.G_nx, 'pos')
+
+        # Draw the full network
+        plt.figure(figsize=(10, 7))
+        nx.draw(self.G_nx, pos, with_labels=False, node_color='orange', edge_color='gray', node_size=5, font_size=8)
+        plt.show()
 
         # put back to df with selected roads so that min and max and be easily calculated
         df = pd.concat(df_objects_all)
@@ -198,14 +207,14 @@ class BangladeshModel(Model):
     def get_route(self, source):
         """
         Select which routing method to use.
-        - 20% chance: Takes a straight route to the end of the road.
-        - 80% chance: Picks a random sink.
+        - 0.1% chance: Takes a straight route to the end of the road.
+        - 99.9% chance: Picks a random sink.
         - Both cases use shortest path lookup but only compute if not already stored.
         """
-        if self.random.random() < 0.2:
-            return self.get_straight_route(source)  # 20% chance - Straight Route
+        if self.random.random() < 0.01:
+            return self.get_straight_route(source)  # 0.1% chance - Straight Route
         else:
-            return self.get_random_route(source)  # 80% chance - Random Destination
+            return self.get_random_route(source)  # 99.9% chance - Random Destination
 
     def get_straight_route(self, source):
         """
@@ -218,20 +227,29 @@ class BangladeshModel(Model):
         Compute the shortest path using NetworkX only if it has not been stored yet.
         - Uses `path_ids_dict` if a new shortest path was not computed.
         - Avoids overriding existing paths that may be default ones.
+        - Always calculates and stores the shortest path distance.
         """
-        # If a new shortest path has been computed before, use it
-        if (source, sink) in self.path_ids_dict:
-            print (self.path_ids_dict[(source, sink)])
-            return self.path_ids_dict[(source, sink)]
 
-        # Compute shortest path using NetworkX
-        if sink and nx.has_path(self.G_nx, source, sink):
+        # Check if the path already exists in the dictionary
+        if (source, sink) in self.path_ids_dict:
+            path_ids = self.path_ids_dict[(source, sink)]  # Get existing path
+
+        # Compute shortest path using NetworkX if not already stored
+        elif sink and nx.has_path(self.G_nx, source, sink):
             path_ids = nx.shortest_path(self.G_nx, source, sink, weight='weight')
             self.path_ids_dict[(source, sink)] = path_ids  # Store new shortest path
-            print (path_ids)
-            return path_ids
         else:
             return None  # No valid path found
+
+        # Compute and store shortest path distance (even if path was already stored)
+        path_distance = nx.shortest_path_length(self.G_nx, source, sink, weight='weight')
+        self.driving_distance.append(path_distance)
+
+        print(f"Path: {path_ids}, Distance: {path_distance}")
+
+        return path_ids
+
+
 
     def step(self):
         """
@@ -260,6 +278,30 @@ class BangladeshModel(Model):
             return 0
         return sum(self.driving_times) / len(self.driving_times)
 
+    def get_truck_speeds(self):
+        """
+        Compute speed for each truck using stored distances and times.
+        Speed is calculated as Distance / Time.
+        Returns a list of speeds and the average speed.
+        """
+
+        # Ensure we have data for both distances and times
+        if not self.driving_times or not self.driving_distance:
+            return 0  # No valid data
+
+        # Compute speed for each truck (avoid division by zero)
+        speeds = [
+            dist / time if time > 0 else 0
+            for dist, time in zip(self.driving_distance, self.driving_times)
+        ]
+
+        # Compute average speed
+        avg_speed = sum(speeds) / len(speeds) if speeds else 0
+
+        print(f"Speeds: {speeds}")
+        print(f"Average Speed: {avg_speed}")
+
+        return avg_speed
 
     def get_biggest_bridge_delay(self):
         '''

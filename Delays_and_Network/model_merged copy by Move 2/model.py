@@ -59,7 +59,7 @@ class BangladeshModel(Model):
 
     step_time = 1
 
-    file_name = 'demo_with_intersection.csv'
+    file_name = '../data/demo_with_intersection.csv'
 
     def __init__(self, seed=None, x_max=500, y_max=500, x_min=0, y_min=0,  
                  probabilities={}, scenario=0):
@@ -135,9 +135,9 @@ class BangladeshModel(Model):
         pos = nx.get_node_attributes(self.G_nx, 'pos')
 
         # Draw the full network
-        plt.figure(figsize=(10, 7))
-        nx.draw(self.G_nx, pos, with_labels=False, node_color='orange', edge_color='gray', node_size=5, font_size=8)
-        plt.show()
+        # plt.figure(figsize=(10, 7))
+        # nx.draw(self.G_nx, pos, with_labels=False, node_color='orange', edge_color='gray', node_size=5, font_size=8)
+        # plt.show()
 
         # put back to df with selected roads so that min and max and be easily calculated
         df = pd.concat(df_objects_all)
@@ -198,7 +198,7 @@ class BangladeshModel(Model):
         while True:
             # different source and sink
             sink = self.random.choice(self.sinks)
-            print (source, sink)
+            #print (source, sink)
             if sink is not source:
                 break
         #return self.path_ids_dict[source, sink]
@@ -245,7 +245,7 @@ class BangladeshModel(Model):
         path_distance = nx.shortest_path_length(self.G_nx, source, sink, weight='weight')
         self.driving_distance.append(path_distance)
 
-        print(f"Path: {path_ids}, Distance: {path_distance}")
+        #print(f"Path: {path_ids}, Distance: {path_distance}")
 
         return path_ids
 
@@ -273,8 +273,9 @@ class BangladeshModel(Model):
 
     def get_average_driving_time(self):
         # Averag driving time of all trucks that reached a Sink (end of the road)
-        if not self.driving_times:  # avoid division by zero
-            return 0
+        total_trucks = len(self.driving_times)  # total trucks that reached a Sink
+        if total_trucks == 0:
+            return 0  # avoid division by zero
         return sum(self.driving_times) / len(self.driving_times)
 
     def get_truck_speeds(self):
@@ -285,8 +286,9 @@ class BangladeshModel(Model):
         """
 
         # Ensure we have data for both distances and times
-        if not self.driving_times or not self.driving_distance:
-            return 0  # No valid data
+        total_trucks = len(self.driving_times)  # total trucks that reached a Sink
+        if total_trucks == 0:
+            return 0  # avoid division by zero
 
         # Compute speed for each truck (avoid division by zero)
         speeds = [
@@ -297,8 +299,8 @@ class BangladeshModel(Model):
         # Compute average speed
         avg_speed = sum(speeds) / len(speeds) if speeds else 0
 
-        print(f"Speeds: {speeds}")
-        print(f"Average Speed: {avg_speed}")
+        #print(f"Speeds: {speeds}")
+        #print(f"Average Speed: {avg_speed}")
 
         return avg_speed
 
