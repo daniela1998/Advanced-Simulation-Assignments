@@ -10,7 +10,8 @@ import numpy as np
 # ---------------------------------------------------------------
 
 # run time 5 x 24 hours; 1 tick 1 minute
-run_length = 24 * 60*5
+days = 5
+run_length = 24 * 60 * days
 
 scenario = {
     0: {'A': 0.0, 'B': 0.0, 'C': 0.0, 'D': 0.0},
@@ -20,12 +21,14 @@ scenario = {
     4: {'A': 0.05, 'B': 0.1, 'C': 0.2, 'D': 0.4},
 }
 
-scenario_range = 1
-
+scenario_range = 2
+replications = 10
 # To generate the same seeds for each scenario
-def generate_seeds(num_seeds, initial_seed):
-    random.seed(initial_seed)
-    return [random.randint(0, 2**32 - 1) for _ in range(num_seeds)]
+#def generate_seeds(num_seeds, initial_seed):
+ #   random.seed(initial_seed)
+  #  return [random.randint(0, 2**32 - 1) for _ in range(num_seeds)]
+
+seeds = (np.random.randint(100000, 999999, size=replications)) # 10 scenarios
 
 # Generate a list of 5 seeds based on an initial seed
 #initial_seed = 1234567
@@ -33,8 +36,6 @@ def generate_seeds(num_seeds, initial_seed):
 #seeds = [1,2,3,4,5,6,7]
 
 for n in range(scenario_range):
-
-    seeds = (np.random.randint(100000, 999999, size=3)) # 10 scenarios
 
     data_list = []
     
