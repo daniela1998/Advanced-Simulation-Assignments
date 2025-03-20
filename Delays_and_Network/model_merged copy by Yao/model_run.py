@@ -9,7 +9,7 @@ import pandas as pd
 # ---------------------------------------------------------------
 
 # run time 5 x 24 hours; 1 tick 1 minute
-run_length = 1 * 1 * 5
+run_length = 1 * 10 * 60
 
 scenario = {
     0: {'A': 0.0, 'B': 0.0, 'C': 0.0, 'D': 0.0},

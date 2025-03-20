@@ -243,9 +243,15 @@ class BangladeshModel(Model):
 
         # Compute and store shortest path distance (even if path was already stored)
         path_distance = nx.shortest_path_length(self.G_nx, source, sink, weight='weight')
-        self.driving_distance.append(path_distance)
+
+        # Ensure only numerical distances are appended
+        if isinstance(path_distance, (int, float)):
+            self.driving_distance.append(path_distance)
+        else:
+            print(f"Error: path_distance is not a number! Found {type(path_distance)} instead.")
 
         print(f"Path: {path_ids}, Distance: {path_distance}")
+        print (f"Distance list: {self.driving_distance}")
 
         return path_ids
 
@@ -289,9 +295,11 @@ class BangladeshModel(Model):
         if not self.driving_times or not self.driving_distance:
             return 0  # No valid data
 
+
+
         # Compute speed for each truck (avoid division by zero)
         speeds = [
-            dist / time if time > 0 else 0
+            dist / time * 60 if time > 0 else 0
             for dist, time in zip(self.driving_distance, self.driving_times)
         ]
 
