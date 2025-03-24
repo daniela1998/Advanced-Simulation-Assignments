@@ -1,7 +1,6 @@
 from mesa import Agent
 from enum import Enum
 import random
-import networkx as nx
 
 
 # ---------------------------------------------------------------
@@ -30,6 +29,7 @@ class Infra(Agent):
         self.name = name
         self.road_name = road_name
         self.vehicle_count = 0
+        
 
     def step(self):
         pass
@@ -114,7 +114,6 @@ class Sink(Infra):
 
 
 
-
 # ---------------------------------------------------------------
 
 class Source(Infra):
@@ -138,7 +137,7 @@ class Source(Infra):
     """
 
     truck_counter = 0
-    generation_frequency = 500
+    generation_frequency = 100
     vehicle_generated_flag = False
 
     def step(self):
@@ -161,11 +160,7 @@ class Source(Infra):
                 self.vehicle_generated_flag = True
                 print(str(self) + " GENERATE " + str(agent))
         except Exception as e:
-            print("Oopssssssssss!", e.__class__, "occurred.")
-            print("Error message:", str(e))
-            print("Traceback:")
-            import traceback
-            traceback.print_exc()
+            print("Oops!", e.__class__, "occurred.")
 
 
 # ---------------------------------------------------------------
@@ -193,7 +188,7 @@ class SourceSink(Source, Sink):
         super().__init__(unique_id, model)
 
     truck_counter = 0
-    generation_frequency = 500
+    generation_frequency = 60
     vehicle_generated_flag = False
     vehicle_removed_toggle = False
 
@@ -227,20 +222,14 @@ class SourceSink(Source, Sink):
             self.vehicle_removed_toggle = not self.vehicle_removed_toggle
             print(str(self) + ' REMOVE ' + str(vehicle))
 
-
             # Store the driving time of this vehicle
             driving_time = vehicle.removed_at_step - vehicle.generated_at_step
             self.model.driving_times.append(driving_time)
             self.model.total_wait_time += vehicle.waiting_time
 
-            #### Calculate the driving speed of 'this' vehicle
-            if vehicle.path_ids:
-                vehicle.vehicle_driving_distance = vehicle.model.get_path_distance_from_ids(vehicle.path_ids)
-                #print("----------- vehicle_driving_distance ----------------", self.vehicle_driving_distance)
-                driving_speed = vehicle.vehicle_driving_distance / driving_time
-                self.model.vehicle_speeds.append(driving_speed)
-
-
+            ##### Add vehicle speed and vehicle calculated expected distance
+            
+            self.model.vehicle_speeds.append(vehicle.vehicle_speed)
 
 
 
@@ -292,7 +281,7 @@ class Vehicle(Agent):
     # 50 km/h translated into meter per min
     speed = 48 * 1000 / 60
     # One tick represents 1 minute
-    step_time = 1
+    step_time = 10
 
     class State(Enum):
         DRIVE = 1
@@ -315,9 +304,9 @@ class Vehicle(Agent):
         self.removed_at_step = None
         self.sink = None  # Add an attribute to store the sink value
         self.source = None  # Add an attribute to store the source value
-
-        #### Add an attribute to store the driving distance of 'this' vehicle
-        self.vehicle_driving_distance = 0
+        ##### Add vehicle speed and vehicle calculated expected distance
+        self.vehicle_speed = 0
+        self.vehicle_expected_distance = 0
 
 
     def __str__(self):
@@ -331,22 +320,7 @@ class Vehicle(Agent):
         Set the origin destination path of the vehicle
         """
         self.path_ids = self.model.get_route(self.generated_by.unique_id)
-
-        #### Pre-calculate the distance between source and sink before driving
-        #self.vehicle_driving_distance = self.get_path_distance_from_ids(self.path_ids)
-        #print("----------- vehicle_driving_distance ----------------", self.vehicle_driving_distance)
-        #print("----------- type ----------------", type(self.vehicle_driving_distance))
-
-    def get_path_distance_from_ids(self, path_ids):
-        """
-        Get the distance of a path given its path_ids.
-        """
-        if not path_ids:
-            return 0
-
-        total_distance = 0
-        for i in range(len(path_ids) - 1):
-            total_distance += self.model.G_nx[path_ids[i]][path_ids[i + 1]]['weight']
+        self.vehicle_expected_distance = self.generated_by.model.get_path_distance(self, path_ids)
 
     def step(self):
         """
@@ -366,7 +340,7 @@ class Vehicle(Agent):
         """
         To print the vehicle trajectory at each step
         """
-        #print(self)
+        print(self)
 
     def drive(self):
 
@@ -394,12 +368,6 @@ class Vehicle(Agent):
             next_infra = self.model.schedule._agents[next_id]  # Access to protected member _agents
             end= self.path_ids[new_index] 
             self.sink = end # To return sink for road
-            #print("-------------------")
-            #print("vehicle id: ", self.unique_id)
-            #print("next id: ", next_id)
-            #print("start time & current time: ", self.generated_at_step, self.model.schedule.steps)
-
-            #print("source & sink ", self.source, self.sink)
 
             if isinstance(next_infra, SourceSink):
                 # arrive at the sink

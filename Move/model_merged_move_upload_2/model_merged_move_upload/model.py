@@ -80,9 +80,6 @@ class BangladeshModel(Model):
         self.generate_model()
         self.broken_bridges = self.determine_broken_bridges()  # stores broken bridge IDs
 
-        #### Add vehicle speed data collection
-        self.vehicle_speeds = []
-
     def generate_model(self):
         """
         generate the simulation model according to the csv file component information
@@ -94,7 +91,7 @@ class BangladeshModel(Model):
 
         # a list of names of roads to be generated
         # TODO You can also read in the road column to generate this list automatically
-        roads = ['N1'] #df.road.unique()
+        roads = df.road.unique()
 
         df_objects_all = []
 
@@ -218,7 +215,7 @@ class BangladeshModel(Model):
         - 80% chance: Picks a random sink.
         - Both cases use shortest path lookup but only compute if not already stored.
         """
-        return self.get_random_route(source)  # 80% chance - Random Destination
+        return self.get_random_route(source)
 
     def get_straight_route(self, source):
         """
@@ -247,7 +244,6 @@ class BangladeshModel(Model):
 
         # Compute and store shortest path distance (even if path was already stored)
         path_distance = nx.shortest_path_length(self.G_nx, source, sink, weight='weight')
-        #print(f"//////////////////////////// Distance: {path_distance}, Source: {source}, Sink: {sink}")
 
         # Ensure only numerical distances are appended
         if isinstance(path_distance, (int, float)):
@@ -259,27 +255,17 @@ class BangladeshModel(Model):
 
         return path_ids
     
-    #### Create a function to get path distance from source and sink
-    def get_path_distance(self, source, sink):
+    def get_path_distance(self, path_ids):
         """
-        Get the distance of a path from source to sink.
+        Calculate the total distance of a given path based on path_ids.
         """
-        path_distance = nx.shortest_path_length(self.G_nx, source, sink, weight='weight')
-        return path_distance*1000
-    
-    #### Create a function to get path distance from path_ids
-    def get_path_distance_from_ids(self, path_ids):
-        """
-        Get the distance of a path given its path_ids.
-        """
-        if not path_ids:
-            return 0
-
         total_distance = 0
         for i in range(len(path_ids) - 1):
-            total_distance += self.G_nx[path_ids[i]][path_ids[i + 1]]['weight']
-        
-        return total_distance * 1000  # Convert to meters
+            if self.G_nx.has_edge(path_ids[i], path_ids[i + 1]):
+                total_distance += self.G_nx[path_ids[i]][path_ids[i + 1]]['weight']
+            else:
+                print(f"Warning: No edge between {path_ids[i]} and {path_ids[i + 1]}")
+        return total_distance
 
     def step(self):
         """

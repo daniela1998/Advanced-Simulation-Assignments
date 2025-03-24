@@ -1,7 +1,6 @@
 from mesa import Agent
 from enum import Enum
 import random
-import networkx as nx
 
 
 # ---------------------------------------------------------------
@@ -114,7 +113,6 @@ class Sink(Infra):
 
 
 
-
 # ---------------------------------------------------------------
 
 class Source(Infra):
@@ -138,7 +136,7 @@ class Source(Infra):
     """
 
     truck_counter = 0
-    generation_frequency = 500
+    generation_frequency = 100
     vehicle_generated_flag = False
 
     def step(self):
@@ -161,11 +159,7 @@ class Source(Infra):
                 self.vehicle_generated_flag = True
                 print(str(self) + " GENERATE " + str(agent))
         except Exception as e:
-            print("Oopssssssssss!", e.__class__, "occurred.")
-            print("Error message:", str(e))
-            print("Traceback:")
-            import traceback
-            traceback.print_exc()
+            print("Oops!", e.__class__, "occurred.")
 
 
 # ---------------------------------------------------------------
@@ -193,7 +187,7 @@ class SourceSink(Source, Sink):
         super().__init__(unique_id, model)
 
     truck_counter = 0
-    generation_frequency = 500
+    generation_frequency = 100
     vehicle_generated_flag = False
     vehicle_removed_toggle = False
 
@@ -233,14 +227,8 @@ class SourceSink(Source, Sink):
             self.model.driving_times.append(driving_time)
             self.model.total_wait_time += vehicle.waiting_time
 
-            #### Calculate the driving speed of 'this' vehicle
-            if vehicle.path_ids:
-                vehicle.vehicle_driving_distance = vehicle.model.get_path_distance_from_ids(vehicle.path_ids)
-                #print("----------- vehicle_driving_distance ----------------", self.vehicle_driving_distance)
-                driving_speed = vehicle.vehicle_driving_distance / driving_time
-                self.model.vehicle_speeds.append(driving_speed)
-
-
+            print(f"Vehicle {vehicle.unique_id} removed after {driving_time} steps.")
+            print(f"Current driving distances: {self.model.driving_distance}")
 
 
 
@@ -316,9 +304,6 @@ class Vehicle(Agent):
         self.sink = None  # Add an attribute to store the sink value
         self.source = None  # Add an attribute to store the source value
 
-        #### Add an attribute to store the driving distance of 'this' vehicle
-        self.vehicle_driving_distance = 0
-
 
     def __str__(self):
         return "Vehicle" + str(self.unique_id) + \
@@ -331,22 +316,6 @@ class Vehicle(Agent):
         Set the origin destination path of the vehicle
         """
         self.path_ids = self.model.get_route(self.generated_by.unique_id)
-
-        #### Pre-calculate the distance between source and sink before driving
-        #self.vehicle_driving_distance = self.get_path_distance_from_ids(self.path_ids)
-        #print("----------- vehicle_driving_distance ----------------", self.vehicle_driving_distance)
-        #print("----------- type ----------------", type(self.vehicle_driving_distance))
-
-    def get_path_distance_from_ids(self, path_ids):
-        """
-        Get the distance of a path given its path_ids.
-        """
-        if not path_ids:
-            return 0
-
-        total_distance = 0
-        for i in range(len(path_ids) - 1):
-            total_distance += self.model.G_nx[path_ids[i]][path_ids[i + 1]]['weight']
 
     def step(self):
         """
@@ -366,7 +335,7 @@ class Vehicle(Agent):
         """
         To print the vehicle trajectory at each step
         """
-        #print(self)
+        print(self)
 
     def drive(self):
 
@@ -394,12 +363,6 @@ class Vehicle(Agent):
             next_infra = self.model.schedule._agents[next_id]  # Access to protected member _agents
             end= self.path_ids[new_index] 
             self.sink = end # To return sink for road
-            #print("-------------------")
-            #print("vehicle id: ", self.unique_id)
-            #print("next id: ", next_id)
-            #print("start time & current time: ", self.generated_at_step, self.model.schedule.steps)
-
-            #print("source & sink ", self.source, self.sink)
 
             if isinstance(next_infra, SourceSink):
                 # arrive at the sink

@@ -10,7 +10,7 @@ import numpy as np
 # ---------------------------------------------------------------
 
 # run time 5 x 24 hours; 1 tick 1 minute
-days = 5
+days = 1
 run_length = 24 * 60 * days
 
 scenario = {
@@ -21,7 +21,7 @@ scenario = {
     4: {'A': 0.05, 'B': 0.1, 'C': 0.2, 'D': 0.4},
 }
 
-scenario_range = len(scenario)
+scenario_range = 5
 replications = 5
 # To generate the same seeds for each scenario
 #def generate_seeds(num_seeds, initial_seed):
@@ -44,27 +44,19 @@ for n in range(scenario_range):
 
         for i in range(run_length):
             sim_model.step()
-        
-        #### add vehicle speed to the data list
-        if len(sim_model.vehicle_speeds) > 0:
-            avg_driving_speed = sum(sim_model.vehicle_speeds) / len(sim_model.vehicle_speeds)
-            avg_driving_speed = avg_driving_speed / 1000 * 60
-        else:
-            avg_driving_speed = 0
 
         data_list.append({
                     'Scenario': n,
                     'Seed': seed,
-                    'Number of vehicles': len(sim_model.vehicle_speeds),
                     'Average_driving_time': sim_model.get_average_driving_time(),
                     'Total_waiting_time': sim_model.get_total_delay_time(),
                     'Average_waiting_time': sim_model.get_average_delay_time(),
                     'Categories'    : ', '.join(sim_model.condition_list),
                     'Broken_bridges': ', '.join(sim_model.get_broken_bridges()),
-                    'Average Speed': avg_driving_speed
+                    'Average Speed': sim_model.get_truck_speeds()
                 })
 
         df = pd.DataFrame(data_list)
 
         # save to csv
-        df.to_csv(f'experiment/scenario{n}.csv', index=False)
+        df.to_csv(f'../experiment/scenario{n}.csv', index=False)

@@ -80,9 +80,6 @@ class BangladeshModel(Model):
         self.generate_model()
         self.broken_bridges = self.determine_broken_bridges()  # stores broken bridge IDs
 
-        #### Add vehicle speed data collection
-        self.vehicle_speeds = []
-
     def generate_model(self):
         """
         generate the simulation model according to the csv file component information
@@ -94,7 +91,8 @@ class BangladeshModel(Model):
 
         # a list of names of roads to be generated
         # TODO You can also read in the road column to generate this list automatically
-        roads = ['N1'] #df.road.unique()
+        #roads = df.road.unique()
+        roads = ['N1', 'N102']
 
         df_objects_all = []
 
@@ -218,13 +216,25 @@ class BangladeshModel(Model):
         - 80% chance: Picks a random sink.
         - Both cases use shortest path lookup but only compute if not already stored.
         """
-        return self.get_random_route(source)  # 80% chance - Random Destination
+        if self.random.random() < 0.01:
+            return self.get_straight_route(source)  # 1% chance - Straight Route
+        else:
+            return self.get_random_route(source)  # 99% chance - Random Destination
 
     def get_straight_route(self, source):
         """
-        pick up a straight route given an origin
+        Pick a straight route given an origin.
+        Instead of passing `sink=None`, find the last node on the same road.
         """
-        return self.compute_shortest_path_if_needed(source, None)
+        # Find the correct sink (end of the road)
+        for (start, end), path in self.path_ids_dict.items():
+            if start == source and end is not None:
+                sink = end  # Assign the last node of the road
+                break
+        else:
+            return None  # If no valid sink is found, return None
+
+        return self.compute_shortest_path_if_needed(source, sink)
 
     def compute_shortest_path_if_needed(self, source, sink):
         """
@@ -247,7 +257,6 @@ class BangladeshModel(Model):
 
         # Compute and store shortest path distance (even if path was already stored)
         path_distance = nx.shortest_path_length(self.G_nx, source, sink, weight='weight')
-        #print(f"//////////////////////////// Distance: {path_distance}, Source: {source}, Sink: {sink}")
 
         # Ensure only numerical distances are appended
         if isinstance(path_distance, (int, float)):
@@ -255,31 +264,10 @@ class BangladeshModel(Model):
         else:
             print(f"Error: path_distance is not a number! Found {type(path_distance)} instead.")
 
-        #print(f"Path: {path_ids}, Distance: {path_distance}, Source: {source}, Sink: {sink}")
+        print(f"Path: {path_ids}, Distance: {path_distance}")
+        print (f"Distance list: {self.driving_distance}")
 
         return path_ids
-    
-    #### Create a function to get path distance from source and sink
-    def get_path_distance(self, source, sink):
-        """
-        Get the distance of a path from source to sink.
-        """
-        path_distance = nx.shortest_path_length(self.G_nx, source, sink, weight='weight')
-        return path_distance*1000
-    
-    #### Create a function to get path distance from path_ids
-    def get_path_distance_from_ids(self, path_ids):
-        """
-        Get the distance of a path given its path_ids.
-        """
-        if not path_ids:
-            return 0
-
-        total_distance = 0
-        for i in range(len(path_ids) - 1):
-            total_distance += self.G_nx[path_ids[i]][path_ids[i + 1]]['weight']
-        
-        return total_distance * 1000  # Convert to meters
 
     def step(self):
         """
@@ -332,6 +320,9 @@ class BangladeshModel(Model):
         # Compute average speed
         avg_speed = overall_speed / overall_speed_len if speeds else 0
 
+        print("-------------------------")
+        print(f"Source: {Vehicle.source}, Sink: {Vehicle.sink}")
+        print(f"Driving Distances & Times: {self.driving_distance} & {self.driving_times}")
         print(f"Speeds: {speeds}")
         print(f"Average Speed: {avg_speed}")
 
@@ -372,6 +363,8 @@ class BangladeshModel(Model):
         total_trucks = len(self.driving_times)  # total trucks that reached a Sink
         if total_trucks == 0:
             return 0  # avoid division by zero
+
+        print(f"All driving times: {self.driving_times}")
         return self.total_wait_time / total_trucks
     
 
