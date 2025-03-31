@@ -98,6 +98,14 @@ class Sink(Infra):
     """
     vehicle_removed_toggle = False
 
+    
+    def __init__(self, unique_id, model, length=0,
+                 name='Unknown', road_name='Unknown',
+                 selection_probability=0.5):
+        super().__init__(unique_id, model, length, name, road_name)
+        self.selection_probability = selection_probability
+    
+    
     def remove(self, vehicle):
         self.model.schedule.remove(vehicle)
         self.vehicle_removed_toggle = not self.vehicle_removed_toggle
@@ -127,8 +135,14 @@ class Source(Infra):
     """
 
     truck_counter = 0
-    generation_frequency = 5
+    #generation_frequency = 5
     vehicle_generated_flag = False
+    
+    def __init__(self, unique_id, model, length=0,
+                 name='Unknown', road_name='Unknown', generation_frequency=5): ###
+        super().__init__(unique_id, model, length, name, road_name)
+        self.generation_frequency = generation_frequency ###
+    
 
     def step(self):
         """
@@ -163,7 +177,16 @@ class SourceSink(Source, Sink):
     Generates and removes trucks
     Multiple inheritance from Source and Sink
     """
-    pass
+    def __init__(self, unique_id, model, length=0,
+                 name='Unknown', road_name='Unknown',
+                 selection_probability=0.5,
+                 generation_frequency=5): ###
+        super().__init__(unique_id, model, length, name, road_name,
+                         generation_frequency=generation_frequency)
+        Sink.__init__(self, unique_id, model, length, name, road_name,
+                       selection_probability=selection_probability)
+        print("SourceSink created: " + str(self))
+
 
 
 # ---------------------------------------------------------------

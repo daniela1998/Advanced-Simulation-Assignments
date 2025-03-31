@@ -56,7 +56,7 @@ class BangladeshModel(Model):
     step_time = 1
 
     # file_name = '../data/demo-4.csv'
-    file_name = '../data/df_road_N1andN2.csv'
+    file_name = '../data/processed/demo_100_with_traffic.csv'
 
     def __init__(self, seed=None, x_max=500, y_max=500, x_min=0, y_min=0):
 
@@ -152,7 +152,9 @@ class BangladeshModel(Model):
                     agent = Sink(row['id'], self, row['length'], name, row['road'])
                     self.sinks.append(agent.unique_id)
                 elif model_type == 'sourcesink':
-                    agent = SourceSink(row['id'], self, row['length'], name, row['road'])
+                    agent = SourceSink(row['id'], self, row['length'], name, row['road'], 
+                                       selection_probability=row['sink_selection_probability'], 
+                                       generation_frequency=row['truck_generation_frequency']) ###
                     self.sources.append(agent.unique_id)
                     self.sinks.append(agent.unique_id)
                 elif model_type == 'bridge':
@@ -180,6 +182,8 @@ class BangladeshModel(Model):
         while True:
             # different source and sink
             sink = self.random.choice(self.sinks)
+            #### pick up a random sink from the list of sinks
+            
             if sink is not source:
                 break
         return self.get_route(source, sink)
