@@ -131,6 +131,10 @@ class Source(Infra):
     vehicle_generated_flag = False
 
     def step(self):
+        """
+        every Source agent generates a truck every 5 minutes (or simulation steps), 
+        as determined by the generation_frequency attribute.
+        """
         if self.model.schedule.steps % self.generation_frequency == 0:
             self.generate_truck()
         else:
@@ -157,6 +161,7 @@ class Source(Infra):
 class SourceSink(Source, Sink):
     """
     Generates and removes trucks
+    Multiple inheritance from Source and Sink
     """
     pass
 
