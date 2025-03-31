@@ -181,9 +181,14 @@ class BangladeshModel(Model):
         """
         while True:
             # different source and sink
-            sink = self.random.choice(self.sinks)
-            #### pick up a random sink from the list of sinks
-            
+            #### pick up a random sink from the list of sinks based on the sink selection probability ####
+            selection_probability = []
+            for sink in self.sinks:
+                selection_probability.append(self.schedule._agents[sink].selection_probability)
+            # print("self.sinks", self.sinks)
+            # print("selection_probability", selection_probability)
+            sink = self.random.choices(self.sinks, weights=selection_probability)[0]
+            ##############################################################################################
             if sink is not source:
                 break
         return self.get_route(source, sink)
