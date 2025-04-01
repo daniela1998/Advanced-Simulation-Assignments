@@ -75,6 +75,7 @@ class BangladeshModel(Model):
         self.total_wait_time = 0  # initialize total waiting time
         self.probabilities = probabilities # insert probabilities dict
         self.scenario = scenario 
+        self.condition_list = []
 
         self.generate_model()
         self.broken_bridges = self.determine_broken_bridges()
@@ -220,6 +221,7 @@ class BangladeshModel(Model):
                     (agent.condition == 'D' and random.random() < agent.probabilities[self.scenario]['D'])):
                     agent.broken = True # NEW
                     broken_bridges.add(agent.unique_id)
+                    self.condition_list.append(agent.condition)
                 else:
                     agent.broken = False
 

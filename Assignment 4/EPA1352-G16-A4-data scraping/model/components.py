@@ -56,6 +56,7 @@ class Bridge(Infra):
 
         self.condition = condition
         self.delay_time = 0
+        self.probabilities = model.probabilities
         self.broken = False
 
     def get_delay_time(self):
@@ -72,6 +73,9 @@ class Bridge(Infra):
         else:
             self.delay_time = 0
         return self.delay_time
+    
+    def get_condition(self):
+        return self.condition 
 
 
 # ---------------------------------------------------------------
@@ -277,6 +281,7 @@ class Vehicle(Agent):
         """
         if self.state == Vehicle.State.WAIT:
             self.waiting_time = max(self.waiting_time - 1, 0)
+            self.model.total_wait_time += 1 # add 1 min to waiting time
             if self.waiting_time == 0:
                 self.waited_at = self.location
                 self.state = Vehicle.State.DRIVE
