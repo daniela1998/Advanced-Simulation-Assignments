@@ -83,7 +83,7 @@ class BangladeshModel(Model):
         # TODO You can also read in the road column to generate this list automatically
         # roads = ['N1', 'N2']
 
-        roads = ['N1', 'N2', 'N105', 'N102', 'N104', 'N204', 'N207']
+        roads = df['road'].unique()
 
         # roads = df['road'].unique()
 
@@ -189,7 +189,7 @@ class BangladeshModel(Model):
             # print("selection_probability", selection_probability)
             sink = self.random.choices(self.sinks, weights=selection_probability)[0]
             ##############################################################################################
-            if sink is not source:
+            if sink is not source:\
                 break
         return self.get_route(source, sink)
 
