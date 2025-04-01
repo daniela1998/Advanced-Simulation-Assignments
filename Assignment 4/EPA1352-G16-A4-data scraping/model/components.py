@@ -318,8 +318,16 @@ class Vehicle(Agent):
             self.removed_at_step = self.model.schedule.steps
             self.location.remove(self)
             return
+
         elif isinstance(next_infra, Bridge):
-            self.waiting_time = next_infra.get_delay_time()
+            if next_infra.broken:
+                if self.waiting_time == 0:  # only calculate delay once per vehicle
+                    self.waiting_time = next_infra.get_delay_time()
+
+            if next_infra.unique_id not in self.model.bridge_delays:
+                self.model.bridge_delays[next_infra.unique_id] = 0  # initialize if not present
+            self.model.bridge_delays[next_infra.unique_id] += self.waiting_time # accumulate delay
+
             if self.waiting_time > 0:
                 # arrive at the bridge and wait
                 self.arrive_at_next(next_infra, 0)

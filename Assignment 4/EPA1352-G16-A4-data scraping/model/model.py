@@ -58,7 +58,9 @@ class BangladeshModel(Model):
     # file_name = '../data/demo-4.csv'
     file_name = '../data/processed/demo_100_with_traffic.csv'
 
-    def __init__(self, seed=None, x_max=500, y_max=500, x_min=0, y_min=0):
+    def __init__(self, seed=None, x_max=500, y_max=500, x_min=0, y_min=0,
+                 probabilities={}, scenario=0
+                 ):
 
         self.schedule = BaseScheduler(self)
         self.running = True
@@ -68,7 +70,14 @@ class BangladeshModel(Model):
         self.sinks = []
         self.G = nx.Graph()
 
+        self.driving_times = []
+        self.bridge_delays = {}  # {bridge_id: total delay time}
+        self.total_wait_time = 0  # initialize total waiting time
+        self.probabilities = probabilities # insert probabilities dict
+        self.scenario = scenario 
+
         self.generate_model()
+        self.broken_bridges = self.determine_broken_bridges()
 
     def generate_model(self):
         """
@@ -200,6 +209,54 @@ class BangladeshModel(Model):
             path_ids = pd.Series(nx.shortest_path(self.G, source, sink))
             self.path_ids_dict[source, sink] = path_ids
             return path_ids
+
+    def determine_broken_bridges(self):
+        broken_bridges = set()
+        for agent in self.schedule._agents.values():
+            if isinstance(agent, Bridge):
+                if ((agent.condition == 'A' and random.random() < agent.probabilities[self.scenario]['A']) or 
+                    (agent.condition == 'B' and random.random() < agent.probabilities[self.scenario]['B']) or 
+                    (agent.condition == 'C' and random.random() < agent.probabilities[self.scenario]['C']) or 
+                    (agent.condition == 'D' and random.random() < agent.probabilities[self.scenario]['D'])):
+                    agent.broken = True # NEW
+                    broken_bridges.add(agent.unique_id)
+                else:
+                    agent.broken = False
+
+        #print(f"Broken bridges for this run: {broken_bridges}")
+        return broken_bridges
+    
+    def get_average_driving_time(self):
+        if not self.driving_times:  # avoid division by zero
+            return 0
+        return sum(self.driving_times) / len(self.driving_times)
+    
+    def get_total_delay_time(self):
+        '''
+        Return the total waiting time of all trucks that reached a Sink (end of the road).
+        '''
+        return self.total_wait_time
+    
+    def get_broken_bridges(self):
+        '''
+        Return the list of broken bridges
+        '''
+        return list(self.broken_bridges)
+    
+    def get_top_10_delay(self):
+        '''
+        Return the 10 bridges with the biggest total delay time in a dictionary form.
+            key=name of the bridge
+            value=total accumulated delay time of the bridge
+        If there is no bridge with delay then return a tuple
+        with the first element being None (name of the bridge) and the second element being 0
+        (caused delay time by that bridge).
+        '''
+        if not self.bridge_delays:
+            return None, 0  # No bridge delays recorded
+        
+        top_10 = dict(sorted(self.bridge_delays.items(), key=lambda item: item[1], reverse=True)[:10])
+        return top_10
 
     def step(self):
         """
