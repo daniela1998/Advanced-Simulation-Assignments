@@ -5,6 +5,8 @@ from components import Source, Sink, SourceSink, Bridge, Link, Intersection
 import pandas as pd
 from collections import defaultdict
 import networkx as nx
+import random
+import heapq
 
 # ---------------------------------------------------------------
 def set_lat_lon_bound(lat_min, lat_max, lon_min, lon_max, edge_ratio=0.02):
@@ -56,7 +58,7 @@ class BangladeshModel(Model):
     step_time = 1
 
     # file_name = '../data/demo-4.csv'
-    file_name = '../data/processed/demo_100_with_traffic.csv'
+    file_name = '../data/processed/demo_100_complete.csv'
 
     def __init__(self, seed=None, x_max=500, y_max=500, x_min=0, y_min=0,
                  probabilities={}, scenario=0
@@ -70,7 +72,7 @@ class BangladeshModel(Model):
         self.sinks = []
         self.G = nx.Graph()
 
-        self.driving_times = []
+        self.driving_time = []
         self.bridge_delays = {}  # {bridge_id: total delay time}
         self.total_wait_time = 0  # initialize total waiting time
         self.probabilities = probabilities # insert probabilities dict
@@ -219,9 +221,9 @@ class BangladeshModel(Model):
                     (agent.condition == 'B' and random.random() < agent.probabilities[self.scenario]['B']) or 
                     (agent.condition == 'C' and random.random() < agent.probabilities[self.scenario]['C']) or 
                     (agent.condition == 'D' and random.random() < agent.probabilities[self.scenario]['D'])):
-                    agent.broken = True # NEW
-                    broken_bridges.add(agent.unique_id)
+                    broken_bridges.add(str(agent.unique_id))
                     self.condition_list.append(agent.condition)
+                    agent.broken = True # NEW
                 else:
                     agent.broken = False
 
@@ -229,9 +231,9 @@ class BangladeshModel(Model):
         return broken_bridges
     
     def get_average_driving_time(self):
-        if not self.driving_times:  # avoid division by zero
+        if not self.driving_time:  # avoid division by zero
             return 0
-        return sum(self.driving_times) / len(self.driving_times)
+        return sum(self.driving_time) / len(self.driving_time)
     
     def get_total_delay_time(self):
         '''
@@ -255,10 +257,25 @@ class BangladeshModel(Model):
         (caused delay time by that bridge).
         '''
         if not self.bridge_delays:
-            return None, 0  # No bridge delays recorded
-        
-        top_10 = dict(sorted(self.bridge_delays.items(), key=lambda item: item[1], reverse=True)[:10])
-        return top_10
+            return {}  # Return an empty dictionary instead of (None, 0)
+
+        # Get the top 10 bridges with the highest delay
+        top_10 = heapq.nlargest(10, self.bridge_delays.items(), key=lambda x: x[1])
+
+        return dict(top_10)
+    
+    def get_average_delay_time(self):
+        '''
+        Return the average waiting time of all trucks that reached a Sink (end of the road).
+        If no trucks reached a Sink, return 0.
+
+        We calculate the average waiting time by dividing the total waiting time
+        by the number of trucks that reached a Sink.
+        '''
+        total_trucks = len(self.driving_time)  # total trucks that reached a Sink
+        if total_trucks == 0:
+            return 0  # avoid division by zero
+        return self.total_wait_time / total_trucks
 
     def step(self):
         """
@@ -266,4 +283,20 @@ class BangladeshModel(Model):
         """
         self.schedule.step()
 
+    def collect_data(self):
+        """
+        Collect data from the vehicles at each step.
+        """
+        for agent in self.schedule.agents:
+            if isinstance(agent, Vehicle):
+                self.data.append({
+                    'step': self.schedule.steps,
+                    'model type': agent.__class__.__name__,
+                    'id': agent.unique_id,
+                    'location': agent.location.unique_id,
+                    'location_offset': agent.location_offset,
+                    'state': agent.state.name,
+                    'waiting_time': agent.waiting_time,
+                    'generated_at_step': agent.generated_at_step,
+                    'removed_at_step': agent.removed_at_step,})
 # EOF -----------------------------------------------------------

@@ -115,6 +115,10 @@ class Sink(Infra):
         self.vehicle_removed_toggle = not self.vehicle_removed_toggle
         print(str(self) + ' REMOVE ' + str(vehicle))
 
+        # Store the driving time of this vehicle
+        truck_driving_time = vehicle.removed_at_step - vehicle.generated_at_step
+        self.model.driving_time.append(truck_driving_time)
+
 
 # ---------------------------------------------------------------
 
@@ -329,16 +333,17 @@ class Vehicle(Agent):
                 if self.waiting_time == 0:  # only calculate delay once per vehicle
                     self.waiting_time = next_infra.get_delay_time()
 
-            if next_infra.unique_id not in self.model.bridge_delays:
-                self.model.bridge_delays[next_infra.unique_id] = 0  # initialize if not present
-            self.model.bridge_delays[next_infra.unique_id] += self.waiting_time # accumulate delay
+                if next_infra.unique_id not in self.model.bridge_delays:
+                    bridge_id = str(next_infra.unique_id)
+                    self.model.bridge_delays[bridge_id] = 0  # initialize if not present
+                self.model.bridge_delays[bridge_id] += self.waiting_time # accumulate delay
 
-            if self.waiting_time > 0:
-                # arrive at the bridge and wait
-                self.arrive_at_next(next_infra, 0)
-                self.state = Vehicle.State.WAIT
-                return
-            # else, continue driving
+                if self.waiting_time > 0:
+                    # arrive at the bridge and wait
+                    self.arrive_at_next(next_infra, 0)
+                    self.state = Vehicle.State.WAIT
+                    return
+                # else, continue driving
 
         if next_infra.length > distance:
             # stay on this object:
