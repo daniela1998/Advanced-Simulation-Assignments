@@ -61,7 +61,7 @@ class BangladeshModel(Model):
     file_name = '../data/processed/demo_100_complete.csv'
 
     def __init__(self, seed=None, x_max=500, y_max=500, x_min=0, y_min=0,
-                 probabilities={}, scenario=0
+                 probabilities={}, scenario=0, flood=False
                  ):
 
         self.schedule = BaseScheduler(self)
@@ -78,6 +78,7 @@ class BangladeshModel(Model):
         self.probabilities = probabilities # insert probabilities dict
         self.scenario = scenario 
         self.condition_list = []
+        self.flood = flood
 
         self.generate_model()
         self.broken_bridges = self.determine_broken_bridges()
@@ -232,29 +233,23 @@ class BangladeshModel(Model):
                 # get base probability from scenario
                 base_prob = agent.probabilities[self.scenario][agent.condition]
 
-                # get flood risk modifier based on flood category
-                flood_modifier = flood_risk_modifiers.get(agent.floodcat, 1.0)
+                if self.flood:
+                    # get flood risk modifier based on flood category
+                    flood_modifier = flood_risk_modifiers.get(agent.floodcat, 1.0)
 
-                # calculate adjusted probability
-                adjusted_prob = base_prob * flood_modifier
+                    # calculate adjusted probability
+                    adjusted_prob = base_prob * flood_modifier
 
-                # apply adjusted probability
+                else:
+                    adjusted_prob = base_prob
+
+                # apply probability
                 if random.random() < adjusted_prob:
                     broken_bridges.add(str(agent.unique_id))
                     self.condition_list.append(agent.condition)
                     agent.broken = True  
                 else:
                     agent.broken = False
-
-                #if ((agent.condition == 'A' and random.random() < agent.probabilities[self.scenario]['A']) or 
-                 #   (agent.condition == 'B' and random.random() < agent.probabilities[self.scenario]['B']) or 
-                 #   (agent.condition == 'C' and random.random() < agent.probabilities[self.scenario]['C']) or 
-                 #   (agent.condition == 'D' and random.random() < agent.probabilities[self.scenario]['D'])):
-                 #   broken_bridges.add(str(agent.unique_id))
-                 #   self.condition_list.append(agent.condition)
-                 #   agent.broken = True # NEW
-                #else:
-                 #   agent.broken = False
 
         #print(f"Broken bridges for this run: {broken_bridges}")
         return broken_bridges

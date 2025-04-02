@@ -31,7 +31,8 @@ for n in range(scenario_range):
     data_list = []
     
     for seed in seeds:
-        sim_model = BangladeshModel(seed=int(seed), probabilities=scenario, scenario=n)
+        sim_model = BangladeshModel(seed=int(seed), probabilities=scenario, scenario=n, 
+                                    flood=True)
         print(f"Running scenario {n} with seed {seed}")
 
         for i in range(run_length):
