@@ -45,7 +45,8 @@ for n in range(scenario_range):
                     'Total_waiting_time': sim_model.get_total_delay_time(),
                     'Average_waiting_time': sim_model.get_average_delay_time(),
                     #'Broken_bridges': ', '.join(sim_model.get_broken_bridges()),
-                    'Top 10 delays': sim_model.get_top_10_delay(),
+                    #'Top 10 delays': sim_model.get_top_10_delay(),
+                    'Delay dict': sim_model.get_bridge_delay_dict(),
                     #'Categories'    : ', '.join(sim_model.condition_list),
                 })
 

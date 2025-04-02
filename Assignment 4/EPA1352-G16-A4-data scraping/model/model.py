@@ -225,8 +225,9 @@ class BangladeshModel(Model):
                                 5: 1.2, 
                                 6: 1.3, 
                                 7: 1.4, 
-                                8: 1.5
+                                8: 1.8
                                 }
+        
 
         for agent in self.schedule._agents.values():
             if isinstance(agent, Bridge):
@@ -288,6 +289,15 @@ class BangladeshModel(Model):
 
         return dict(top_10)
     
+    def get_bridge_delay_dict(self):
+        '''
+        Return the dictionary of bridges with their accumulated delay time
+        '''
+        #sort self.bridge_delays
+        sorted_bridge_delays = dict(sorted(self.bridge_delays.items(), key=lambda x: x[1], reverse=True))
+
+        return sorted_bridge_delays
+
     def get_average_delay_time(self):
         '''
         Return the average waiting time of all trucks that reached a Sink (end of the road).
