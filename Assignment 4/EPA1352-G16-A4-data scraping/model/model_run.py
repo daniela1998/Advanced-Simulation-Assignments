@@ -14,17 +14,17 @@ days = 1
 run_length = 24 * 60 * days
 
 scenario = {
-    0: {'A': 0.05, 'B': 0.1, 'C': 0.2, 'D': 0.4},
-    #1: {'A': 0.0, 'B': 0.0, 'C': 0.0, 'D': 0.05},
+    0: {'A': 0.0, 'B': 0.0, 'C': 0.0, 'D': 0.0},
+    1: {'A': 0.05, 'B': 0.1, 'C': 0.2, 'D': 0.4},
     #2: {'A': 0.0, 'B': 0.0, 'C': 0.05, 'D': 0.1},
     #3: {'A': 0.0, 'B': 0.05, 'C': 0.1, 'D': 0.2},
     #4: {'A': 0.05, 'B': 0.1, 'C': 0.2, 'D': 0.4},
 }
 
 scenario_range = len(scenario)
-replications = 3
+replications = 2
 
-seeds = (np.random.randint(100000, 999999, size=replications)) # 5 scenarios
+seeds = (np.random.randint(100000, 999999, size=replications))
 
 for n in range(scenario_range):
 
@@ -51,4 +51,4 @@ for n in range(scenario_range):
         df = pd.DataFrame(data_list)
 
         # save to csv
-        df.to_csv(f'../scenario{n+1}.csv', index=False)
+        df.to_csv(f'../scenario{n}.csv', index=False)
