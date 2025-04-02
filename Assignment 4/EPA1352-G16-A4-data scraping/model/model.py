@@ -170,7 +170,7 @@ class BangladeshModel(Model):
                     self.sources.append(agent.unique_id)
                     self.sinks.append(agent.unique_id)
                 elif model_type == 'bridge':
-                    agent = Bridge(row['id'], self, row['length'], name, row['road'], row['condition'])
+                    agent = Bridge(row['id'], self, row['length'], name, row['road'], row['condition'], row['FLOODCAT'])
                 elif model_type == 'link':
                     agent = Link(row['id'], self, row['length'], name, row['road'])
                 elif model_type == 'intersection':
@@ -215,17 +215,46 @@ class BangladeshModel(Model):
 
     def determine_broken_bridges(self):
         broken_bridges = set()
+
+        flood_risk_modifiers = {0: 0.7, 
+                                1: 0.8, 
+                                2: 0.9, 
+                                3: 1.0, 
+                                4: 1.1, 
+                                5: 1.2, 
+                                6: 1.3, 
+                                7: 1.4, 
+                                8: 1.5
+                                }
+
         for agent in self.schedule._agents.values():
             if isinstance(agent, Bridge):
-                if ((agent.condition == 'A' and random.random() < agent.probabilities[self.scenario]['A']) or 
-                    (agent.condition == 'B' and random.random() < agent.probabilities[self.scenario]['B']) or 
-                    (agent.condition == 'C' and random.random() < agent.probabilities[self.scenario]['C']) or 
-                    (agent.condition == 'D' and random.random() < agent.probabilities[self.scenario]['D'])):
+                # get base probability from scenario
+                base_prob = agent.probabilities[self.scenario][agent.condition]
+
+                # get flood risk modifier based on flood category
+                flood_modifier = flood_risk_modifiers.get(agent.floodcat, 1.0)
+
+                # calculate adjusted probability
+                adjusted_prob = base_prob * flood_modifier
+
+                # apply adjusted probability
+                if random.random() < adjusted_prob:
                     broken_bridges.add(str(agent.unique_id))
                     self.condition_list.append(agent.condition)
-                    agent.broken = True # NEW
+                    agent.broken = True  
                 else:
                     agent.broken = False
+
+                #if ((agent.condition == 'A' and random.random() < agent.probabilities[self.scenario]['A']) or 
+                 #   (agent.condition == 'B' and random.random() < agent.probabilities[self.scenario]['B']) or 
+                 #   (agent.condition == 'C' and random.random() < agent.probabilities[self.scenario]['C']) or 
+                 #   (agent.condition == 'D' and random.random() < agent.probabilities[self.scenario]['D'])):
+                 #   broken_bridges.add(str(agent.unique_id))
+                 #   self.condition_list.append(agent.condition)
+                 #   agent.broken = True # NEW
+                #else:
+                 #   agent.broken = False
 
         #print(f"Broken bridges for this run: {broken_bridges}")
         return broken_bridges
@@ -257,9 +286,9 @@ class BangladeshModel(Model):
         (caused delay time by that bridge).
         '''
         if not self.bridge_delays:
-            return {}  # Return an empty dictionary instead of (None, 0)
+            return {}  # return empty dict if no bridges with delay
 
-        # Get the top 10 bridges with the highest delay
+        # get the top 10 bridges with the highest delay
         top_10 = heapq.nlargest(10, self.bridge_delays.items(), key=lambda x: x[1])
 
         return dict(top_10)

@@ -51,4 +51,4 @@ for n in range(scenario_range):
         df = pd.DataFrame(data_list)
 
         # save to csv
-        df.to_csv(f'../scenario{n}.csv', index=False)
+        df.to_csv(f'../scenario{n+1}.csv', index=False)
