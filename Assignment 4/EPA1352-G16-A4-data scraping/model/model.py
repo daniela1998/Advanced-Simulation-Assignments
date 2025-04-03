@@ -61,7 +61,8 @@ class BangladeshModel(Model):
     file_name = '../data/processed/demo_100_complete.csv'
 
     def __init__(self, seed=None, x_max=500, y_max=500, x_min=0, y_min=0,
-                 probabilities={}, scenario=0, flood=False
+                 probabilities={}, scenario=0, 
+                 flood=False, heavy_truck = False
                  ):
 
         self.schedule = BaseScheduler(self)
@@ -79,6 +80,7 @@ class BangladeshModel(Model):
         self.scenario = scenario 
         self.condition_list = []
         self.flood = flood
+        self.heavy_truck = heavy_truck
 
         self.generate_model()
         self.broken_bridges = self.determine_broken_bridges()
@@ -171,7 +173,8 @@ class BangladeshModel(Model):
                     self.sources.append(agent.unique_id)
                     self.sinks.append(agent.unique_id)
                 elif model_type == 'bridge':
-                    agent = Bridge(row['id'], self, row['length'], name, row['road'], row['condition'], row['FLOODCAT'])
+                    agent = Bridge(row['id'], self, row['length'], name, row['road'], row['condition'], 
+                                   row['FLOODCAT'], row['heavy_truck_normalized'])
                 elif model_type == 'link':
                     agent = Link(row['id'], self, row['length'], name, row['road'])
                 elif model_type == 'intersection':
@@ -228,6 +231,13 @@ class BangladeshModel(Model):
                                 8: 1.8
                                 }
         
+        heavy_truck_modifiers = {
+            (0, 0.02): 1,   
+            (0.021, 0.17): 1.1,  
+            (0.171, 0.28): 1.2,  
+            (0.281, float('inf')): 1.5  
+            }
+        
 
         for agent in self.schedule._agents.values():
             if isinstance(agent, Bridge):
@@ -240,6 +250,10 @@ class BangladeshModel(Model):
 
                     # calculate adjusted probability
                     adjusted_prob = base_prob * flood_modifier
+
+                elif self.heavy_truck:
+                    heavy_truck_modifier = heavy_truck_modifiers.get(agent.heavy_truck, 1.0)
+                    adjusted_prob = base_prob * heavy_truck_modifier
 
                 else:
                     adjusted_prob = base_prob

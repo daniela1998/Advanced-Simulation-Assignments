@@ -51,14 +51,16 @@ class Bridge(Infra):
     """
 
     def __init__(self, unique_id, model, length=0,
-                 name='Unknown', road_name='Unknown', condition='Unknown', FLOODCAT='Unknown'):
+                 name='Unknown', road_name='Unknown', 
+                 condition='Unknown', FLOODCAT='Unknown', heavy_truck_normalized='Unknown'):
         super().__init__(unique_id, model, length, name, road_name)
 
         self.condition = condition
         self.delay_time = 0
         self.probabilities = model.probabilities
-        self.floodcat = FLOODCATbridge_delay
+        self.floodcat = FLOODCAT
         self.broken = False
+        self.heavy_truck = heavy_truck_normalized
 
     def get_delay_time(self):
         # 1 step = 1 min

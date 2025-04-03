@@ -32,7 +32,7 @@ for n in range(scenario_range):
     
     for seed in seeds:
         sim_model = BangladeshModel(seed=int(seed), probabilities=scenario, scenario=n, 
-                                    flood=True)
+                                    flood=False, heavy_truck=True)
         print(f"Running scenario {n} with seed {seed}")
 
         for i in range(run_length):
