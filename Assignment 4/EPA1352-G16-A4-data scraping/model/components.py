@@ -66,11 +66,11 @@ class Bridge(Infra):
         # 1 step = 1 min
         if self.broken:
             if self.length > 200:
-                self.delay_time = self.random.triangular(60, 120, 240)
+                self.delay_time = self.random.triangular(90, 180, 300)
             if 50 < self.length <= 200:
-                self.delay_time = self.random.uniform(45, 90)
+                self.delay_time = self.random.uniform(45, 120)
             if 10 < self.length <= 50:
-                self.delay_time = self.random.uniform(15, 60)
+                self.delay_time = self.random.uniform(15, 90)
             if self.length <= 10:
                 self.delay_time = self.random.uniform(10, 20)
         else:

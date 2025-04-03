@@ -220,22 +220,23 @@ class BangladeshModel(Model):
     def determine_broken_bridges(self):
         broken_bridges = set()
 
-        flood_risk_modifiers = {0: 0.7, 
-                                1: 0.8, 
-                                2: 0.9, 
-                                3: 1.0, 
-                                4: 1.1, 
-                                5: 1.2, 
-                                6: 1.3, 
-                                7: 1.4, 
-                                8: 1.8
+        flood_risk_modifiers = {0: 1.0,   # No flood
+                                1: 1.1,
+                                2: 1.2,
+                                3: 1.3,
+                                4: 1.5,
+                                5: 1.7,
+                                6: 2.0,
+                                7: 2.5,
+                                8: 3.0
                                 }
         
         heavy_truck_modifiers = {
-            (0, 0.02): 1,   
+            (0, 0.02): 1.0,   
             (0.021, 0.17): 1.1,  
             (0.171, 0.28): 1.2,  
-            (0.281, 1.0): 1.5  
+            (0.281, 0.49): 1.3,
+            (0.50, 1.0): 1.5  
             }
         
 
