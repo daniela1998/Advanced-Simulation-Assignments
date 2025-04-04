@@ -60,4 +60,4 @@ for config in configurations:
             df = pd.DataFrame(data_list)
 
             # save to csv
-            df.to_csv(f'../scenario{n}_flood{flood}_heavy_truck{heavy_truck}.csv', index=False)
+            df.to_csv(f'../data/scenario{n}_flood{flood}_heavy_truck{heavy_truck}.csv', index=False)
